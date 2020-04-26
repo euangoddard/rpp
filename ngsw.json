@@ -1,0 +1,84 @@
+{
+  "configVersion": 1,
+  "timestamp": 1587906703317,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/0-es2015.6f9009de95849b783678.worker.js",
+        "/0-es5.6f9009de95849b783678.worker.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main-es2015.b14ab90e906dc1943d51.js",
+        "/main-es5.b14ab90e906dc1943d51.js",
+        "/manifest.webmanifest",
+        "/polyfills-es2015.690002c25ea8557bb4b0.js",
+        "/polyfills-es5.9e286f6d9247438cbb02.js",
+        "/runtime-es2015.1eba213af0b233498d9d.js",
+        "/runtime-es5.1eba213af0b233498d9d.js",
+        "/styles.ce30baa406bc105ef863.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/icons/apple-touch-icon.png",
+        "/assets/icons/favicon-16x16.png",
+        "/assets/icons/favicon-32x32.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/process.py",
+        "/assets/raw.json",
+        "/assets/recipes.json"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/0-es2015.6f9009de95849b783678.worker.js": "8948cc842534895c8150e7b909b55e72334cacea",
+    "/0-es5.6f9009de95849b783678.worker.js": "e13dad8e57cfbd1a15fa45d2465d31d17597ccb7",
+    "/assets/icons/apple-touch-icon.png": "e467e09fd27d750f90f8d37ec035ad46be099d16",
+    "/assets/icons/favicon-16x16.png": "2adf3901b9bb108033c5c35740f2380b978c716d",
+    "/assets/icons/favicon-32x32.png": "b4a4142deb40ec988c73dea1214167d69f180680",
+    "/assets/icons/icon-192x192.png": "0e0505d93d862007fb33a9250da85018fc717f06",
+    "/assets/icons/icon-512x512.png": "51fcf79a4fa5ba6b8ad010b5ee6380016e9b277c",
+    "/assets/process.py": "ad062977c289738c5f8060e87cab49550adbf49f",
+    "/assets/raw.json": "8565a005ffe0f41a651d1dc88a5ba7ffbf7881df",
+    "/assets/recipes.json": "f9fb00d234a38619f5ef9e4f892f7127c94ca57c",
+    "/favicon.ico": "29204d4662c754936f03e914fcb371e45d9ecc87",
+    "/index.html": "03dd366d642c292201529fa09f5cd0b5f4c26e76",
+    "/main-es2015.b14ab90e906dc1943d51.js": "6abbf90d0d3c5c165ebfba60bbe4643a995bd412",
+    "/main-es5.b14ab90e906dc1943d51.js": "0a0e4b621a854d03a21a0e10dfe6ebdf2bcbeeed",
+    "/manifest.webmanifest": "0818d7ca9826c47d970a2f140214293e0b1b93d4",
+    "/polyfills-es2015.690002c25ea8557bb4b0.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
+    "/polyfills-es5.9e286f6d9247438cbb02.js": "e51a1de4f016cd689dbdbef51043dec9518c4111",
+    "/runtime-es2015.1eba213af0b233498d9d.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/runtime-es5.1eba213af0b233498d9d.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/styles.ce30baa406bc105ef863.css": "427e00d587b42e227b90f8c7a3993928897f83b4"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
