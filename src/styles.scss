@@ -1,1 +1,112 @@
-/* You can add global styles to this file, and also import other style files */
+$font-stack-sans-serif: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+  Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+$font-stack-serif: Baskervilla, Georgia, Times, serif;
+* {
+  box-sizing: border-box;
+}
+body,
+html {
+  height: 100%;
+}
+
+body {
+  font-family: $font-stack-sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(black, 0.87);
+  padding: 0.25rem 1.5rem 1rem;
+  margin: 0;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+%heading {
+  font-family: $font-stack-serif;
+  margin: 0 0 1rem;
+  font-weight: 500;
+}
+
+h1 {
+  @extend %heading;
+  font-size: 2.5rem;
+}
+
+h2 {
+  @extend %heading;
+  font-size: 2rem;
+}
+
+h3 {
+  @extend %heading;
+  font-size: 1.75rem;
+}
+
+h4 {
+  @extend %heading;
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+%block {
+  margin: 0 0 1rem;
+}
+
+p {
+  @extend %block;
+}
+
+ol,
+ul {
+  @extend %block;
+  padding-left: 3rem;
+}
+
+li {
+  margin: 0 0 0.5rem;
+}
+
+a {
+  text-decoration-skip-ink: auto;
+}
+
+.recipe-section {
+  margin-bottom: 2rem;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category {
+  display: inline-block;
+  background: darken(white, 5%);
+
+  line-height: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  margin-inline-end: 0.5rem;
+
+  font-weight: 500;
+  color: rgba(black, 0.87);
+
+  &:hover {
+    background: darken(white, 10%);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  h1 {
+    flex-shrink: 0;
+    margin: {
+      right: 2rem;
+      bottom: 0;
+    }
+  }
+
+}

@@ -1,0 +1,14 @@
+<ng-container *alias="category$ | async as category">
+  <h2>
+    <ng-container *ngIf="category; else all">{{ category }}</ng-container>
+    recipes
+  </h2>
+  <ng-template #all>All</ng-template>
+  <a *ngIf="category" routerLink="/recipes">All recipes</a>
+</ng-container>
+
+<ul *ngIf="recipes$ | async as recipes">
+  <li *ngFor="let recipe of recipes; trackBy: trackById">
+    <a [routerLink]="['/recipes', recipe.id]">{{ recipe.title }}</a>
+  </li>
+</ul>
