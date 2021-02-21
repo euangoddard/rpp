@@ -1,0 +1,26 @@
+<a routerLink="/recipes">&#171; All recipes</a>
+
+<ng-container *ngIf="recipe$ | async as recipe">
+  <h2>{{ recipe.title }}</h2>
+  <p>Serves: {{ recipe.serves }}</p>
+  <h3>Ingredients</h3>
+  <section
+    class="recipe-section"
+    [innerHTML]="recipe.ingredients | ingredients"
+  ></section>
+  <h3>Method</h3>
+  <section
+    class="recipe-section"
+    [innerHTML]="recipe.method | method"
+  ></section>
+  <h3>Categories</h3>
+  <p class="categories">
+    <a
+      class="category"
+      [routerLink]="['/recipes']"
+      [queryParams]="{ category: category }"
+      *ngFor="let category of recipe.categories"
+      >{{ category }}</a
+    >
+  </p>
+</ng-container>

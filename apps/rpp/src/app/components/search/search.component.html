@@ -1,0 +1,38 @@
+<i class="material-icons">search</i>
+<input
+  type="text"
+  placeholder="Search recipes"
+  (focus)="isActive = true"
+  (blur)="isActive = false"
+  (input)="receiveInput($event)"
+  (keyup)="handleKeyUp($event.key)"
+  #searchBox
+/>
+<ng-container *alias="query$ | async as query">
+  <ng-container *alias="results$ | async as results">
+    <div class="search-results" *ngIf="results && query">
+      <header class="search-results-header">
+        <h2>
+          Search results for <strong>{{ query }}</strong>
+        </h2>
+        <span class="spacer"></span>
+        <button type="button" class="close-results" (click)="clearQuery()">
+          <i class="material-icons">close</i>
+        </button>
+      </header>
+
+      <ul *ngIf="results.length; else noResults">
+        <li *ngFor="let recipe of results; trackBy: trackById">
+          <a [routerLink]="['/recipes', recipe.id]" (click)="clearQuery()">{{
+            recipe.title
+          }}</a>
+        </li>
+      </ul>
+      <ng-template #noResults>
+        <p>
+          There are no results for <strong>{{ query }}</strong>
+        </p>
+      </ng-template>
+    </div>
+  </ng-container>
+</ng-container>

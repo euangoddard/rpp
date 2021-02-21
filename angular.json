@@ -1,7 +1,8 @@
 {
   "version": 1,
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
   },
   "defaultProject": "rpp",
   "schematics": {
@@ -47,9 +48,16 @@
             "polyfills": "apps/rpp/src/polyfills.ts",
             "tsConfig": "apps/rpp/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/rpp/src/favicon.ico", "apps/rpp/src/assets"],
-            "styles": ["apps/rpp/src/styles.scss"],
-            "scripts": []
+            "assets": [
+              "apps/rpp/src/favicon.ico",
+              "apps/rpp/src/manifest.webmanifest",
+              "apps/rpp/src/assets"
+            ],
+            "styles": [
+              "apps/rpp/src/styles.scss"
+            ],
+            "scripts": [],
+            "webWorkerTsConfig": "apps/rpp/tsconfig.worker.json"
           },
           "configurations": {
             "production": {
@@ -104,12 +112,17 @@
             "lintFilePatterns": [
               "apps/rpp/src/**/*.ts",
               "apps/rpp/src/**/*.html"
+            ],
+            "tsConfig": [
+              "apps/rpp/tsconfig.worker.json"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/rpp"],
+          "outputs": [
+            "coverage/apps/rpp"
+          ],
           "options": {
             "jestConfig": "apps/rpp/jest.config.js",
             "passWithNoTests": true
@@ -138,7 +151,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/rpp-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/rpp-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
