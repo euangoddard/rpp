@@ -1,5 +1,5 @@
 ---
-import Search from "../components/Search.tsx";
+import Header from "../components/Header.astro";
 import HeadInfo from "../components/HeadInfo.astro";
 import RecentRecipes from "../components/RecentRecipes.tsx";
 import StarredRecipes from "../components/StarredRecipes.tsx";
@@ -14,7 +14,9 @@ import StarredRecipes from "../components/StarredRecipes.tsx";
 </head>
 
 <body>
-  <Search client:visible />
+  <Header />
   <RecentRecipes client:load />
   <StarredRecipes client:load />
+  <h2>Browse all recipes</h2>
+  <p><a href="/recipes/">Browse</a></p>
 </body>

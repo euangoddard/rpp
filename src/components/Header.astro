@@ -1,0 +1,19 @@
+---
+import Search from "./Search.tsx";
+---
+
+<header class="header">
+  <a href="/" class="home-link"><span class="material-icons">home</span></a>
+  <Search client:visible />
+</header>
+
+<style>
+  .header {
+    display: flex;
+    align-items: center;
+  }
+  .home-link {
+    padding: 1rem 0.5rem;
+    margin-inline-end: 0.5rem;
+  }
+</style>

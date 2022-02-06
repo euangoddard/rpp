@@ -1,8 +1,6 @@
 ---
 import { getTagSlug } from "../../lib/tags";
 import { buildPermalink } from "../../lib/permalink";
-import RecipesList from "../../components/RecipesList.astro";
-import HeadInfo from "../../components/HeadInfo.astro";
 
 export async function getStaticPaths() {
   const recipes = Astro.fetchContent("../recipes/*.md");
@@ -21,6 +19,11 @@ export async function getStaticPaths() {
   });
   return tagsOpts;
 }
+
+import RecipesList from "../../components/RecipesList.astro";
+import HeadInfo from "../../components/HeadInfo.astro";
+import Header from "../../components/Header.astro";
+
 const { slug } = Astro.request.params;
 const { tag, recipes } = Astro.props;
 const title = `${tag} category recipes`;
@@ -31,7 +34,9 @@ const permalink = buildPermalink(`/categories/${slug}`);
 <head>
   <HeadInfo {title} {description} {permalink} />
 </head>
+
 <body>
+  <Header />
   <h1>{title}</h1>
   <RecipesList {recipes} />
 </body>

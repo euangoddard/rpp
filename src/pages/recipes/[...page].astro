@@ -3,7 +3,7 @@ import { buildPermalink } from "../../lib/permalink";
 import HeadInfo from "../../components/HeadInfo.astro";
 import Pagination from "../../components/Pagination.astro";
 import RecipesList from "../../components/RecipesList.astro";
-import Search from "../../components/Search.tsx";
+import Header from "../../components/Header.astro";
 
 export async function getStaticPaths({ paginate }) {
   const data = Astro.fetchContent("./*.md");
@@ -20,7 +20,7 @@ const permalink = buildPermalink(page.url.current);
   <HeadInfo {title} {description} {permalink} />
 </head>
 <body>
-  <Search client:visible />
+  <Header />
   <h1>{title}</h1>
   <RecipesList recipes={page.data} includeCategories={true} />
   <Pagination {page} />

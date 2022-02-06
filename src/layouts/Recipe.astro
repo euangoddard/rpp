@@ -1,7 +1,7 @@
 ---
 import HeadInfo from "../components/HeadInfo.astro";
 import Categories from "../components/Categories.astro";
-import Search from "../components/Search.tsx";
+import Header from "../components/Header.astro";
 import StoreRecentRecipe from "../components/StoreRecentRecipe.tsx";
 import StarRecipe from "../components/StarRecipe.tsx";
 import { buildPermalink } from "../lib/permalink";
@@ -17,16 +17,21 @@ const recipeSynopsis = { title: content.title, url: `/recipes/${slug}` };
   </head>
 
   <body>
-    <Search client:visible />
+    <Header />
     <StoreRecentRecipe recipe={recipeSynopsis} client:idle />
-    <h1>{title}</h1>
-    <StarRecipe client:load recipe={recipeSynopsis} />
+    <h1>
+      {title}
+      <StarRecipe client:load recipe={recipeSynopsis} />
+    </h1>
+
     <p>Serves {serves}</p>
     <section class="recipe-detail">
       <slot />
     </section>
-    <h3>Categories</h3>
-    <Categories categories={tags} />
+    <aside class="recipe-categories">
+      <h3>Categories</h3>
+      <Categories categories={tags} />
+    </aside>
   </body>
 </html>
 
@@ -34,5 +39,8 @@ const recipeSynopsis = { title: content.title, url: `/recipes/${slug}` };
   .recipe-detail {
     margin-bottom: 2rem;
     max-width: 960px;
+  }
+  .recipe-categories {
+    padding-bottom: 2rem;
   }
 </style>
