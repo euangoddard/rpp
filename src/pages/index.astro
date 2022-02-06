@@ -1,0 +1,20 @@
+---
+import Search from "../components/Search.tsx";
+import HeadInfo from "../components/HeadInfo.astro";
+import RecentRecipes from "../components/RecentRecipes.tsx";
+import StarredRecipes from "../components/StarredRecipes.tsx";
+---
+
+<head>
+  <HeadInfo
+    title="Welcome to recipes++"
+    description="Recipes home"
+    permalink="/"
+  />
+</head>
+
+<body>
+  <Search client:visible />
+  <RecentRecipes client:load />
+  <StarredRecipes client:load />
+</body>

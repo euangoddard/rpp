@@ -1,0 +1,38 @@
+---
+import HeadInfo from "../components/HeadInfo.astro";
+import Categories from "../components/Categories.astro";
+import Search from "../components/Search.tsx";
+import StoreRecentRecipe from "../components/StoreRecentRecipe.tsx";
+import StarRecipe from "../components/StarRecipe.tsx";
+import { buildPermalink } from "../lib/permalink";
+const { content } = Astro.props;
+const { title, serves, tags, slug } = content;
+const permalink = buildPermalink(`/recipes/${slug}`);
+const recipeSynopsis = { title: content.title, url: `/recipes/${slug}` };
+---
+
+<html lang="en">
+  <head>
+    <HeadInfo {title} description={title} {permalink} />
+  </head>
+
+  <body>
+    <Search client:visible />
+    <StoreRecentRecipe recipe={recipeSynopsis} client:idle />
+    <h1>{title}</h1>
+    <StarRecipe client:load recipe={recipeSynopsis} />
+    <p>Serves {serves}</p>
+    <section class="recipe-detail">
+      <slot />
+    </section>
+    <h3>Categories</h3>
+    <Categories categories={tags} />
+  </body>
+</html>
+
+<style>
+  .recipe-detail {
+    margin-bottom: 2rem;
+    max-width: 960px;
+  }
+</style>

@@ -1,0 +1,37 @@
+---
+import { getTagSlug } from "../../lib/tags";
+import { buildPermalink } from "../../lib/permalink";
+import RecipesList from "../../components/RecipesList.astro";
+import HeadInfo from "../../components/HeadInfo.astro";
+
+export async function getStaticPaths() {
+  const recipes = Astro.fetchContent("../recipes/*.md");
+  const tags = new Set(recipes.map(({ tags }) => tags).flat());
+  const tagsOpts = Array.from(tags).map((tag: string) => {
+    const slug = getTagSlug(tag);
+    return {
+      params: { slug },
+      props: {
+        tag,
+        recipes: recipes.filter(({ tags }) => {
+          return tags.some((t) => getTagSlug(t) === slug);
+        }),
+      },
+    };
+  });
+  return tagsOpts;
+}
+const { slug } = Astro.request.params;
+const { tag, recipes } = Astro.props;
+const title = `${tag} category recipes`;
+const description = `Recipes in the "${tag}" category`;
+const permalink = buildPermalink(`/categories/${slug}`);
+---
+
+<head>
+  <HeadInfo {title} {description} {permalink} />
+</head>
+<body>
+  <h1>{title}</h1>
+  <RecipesList {recipes} />
+</body>

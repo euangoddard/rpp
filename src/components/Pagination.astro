@@ -1,0 +1,8 @@
+---
+const { page } = Astro.props;
+---
+<p>
+    {(page.currentPage > 1) ? <a href={page.url.prev}>&lt;</a> : <span>&lt;</span>}
+    Page {page.currentPage} of {page.lastPage}
+    {(page.currentPage < page.lastPage) ? <a href={page.url.next}>&gt;</a> : <span>&gt;</span>}
+</p>

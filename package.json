@@ -1,0 +1,26 @@
+{
+  "name": "@example/blog",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "prebuild": "index-recipes",
+    "build": "astro build",
+    "preview": "astro preview",
+    "index-recipes": "node scripts/index-recipes.js"
+  },
+  "devDependencies": {
+    "astro": "^0.22.20",
+    "fast-glob": "^3.2.11",
+    "front-matter": "^4.0.2",
+    "prettier": "^2.5.1",
+    "prettier-plugin-astro": "^0.0.12"
+  },
+  "dependencies": {
+    "@types/lunr": "^2.3.4",
+    "classnames": "^2.3.1",
+    "lunr": "^2.3.9",
+    "slugify": "^1.6.5"
+  }
+}

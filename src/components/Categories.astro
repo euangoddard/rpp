@@ -1,0 +1,39 @@
+---
+export interface Props {
+  categories: readonly string[];
+}
+import { getTagUrl } from "../lib/tags";
+
+const { categories } = Astro.props;
+---
+
+<nav class="categories">
+  {categories.map((cat) => (
+    <a class="category" href={getTagUrl(cat)}>
+      {cat}
+    </a>
+  ))}
+</nav>
+
+<style>
+  .categories {
+    display: inline-flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .category {
+    display: inline-block;
+    background: #f2f2f2;
+    line-height: 1;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    margin-inline-end: 0.5rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.87);
+    text-decoration: none;
+  }
+  .category:hover {
+    background: #e6e6e6;
+  }
+</style>

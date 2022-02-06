@@ -1,0 +1,14 @@
+---
+import Categories from "./Categories.astro";
+const includeCategories = !!Astro.props["includeCategories"];
+const { recipes } = Astro.props;
+---
+
+<ol>
+  {recipes.map(({ title, url, tags }) => (
+    <li>
+      <a href={url}>{title}</a>
+      {includeCategories ? <Categories categories={tags} /> : " "}
+    </li>
+  ))}
+</ol>
