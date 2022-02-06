@@ -1,11 +1,11 @@
 {
-  "name": "@example/blog",
+  "name": "rpp",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "prebuild": "index-recipes",
+    "prebuild": "npm run index-recipes",
     "build": "astro build",
     "preview": "astro preview",
     "index-recipes": "node scripts/index-recipes.js"
