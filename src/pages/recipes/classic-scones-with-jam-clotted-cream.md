@@ -10,16 +10,16 @@ tags:
 
 ## Ingredients
 
-- 350g self-raising flour , plus more for dusting
+- 350g self-raising flour, plus more for dusting
 - ¼ tsp salt
 - 1 tsp baking powder
-- 85g butter , cut into cubes
+- 85g butter, cut into cubes
 - 3 tbsp caster sugar
 - 175ml milk
 - 1 tsp vanilla extract
 - squeeze lemon juice
-- beaten egg , to glaze
-- jam and clotted cream , to serve
+- beaten egg, to glaze
+- jam and clotted cream, to serve
 
 ## Method
 

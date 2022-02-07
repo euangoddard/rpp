@@ -12,7 +12,9 @@ tags:
 - For the chestnuts
 - 200g pack peeled, whole chestnuts
 - vegetable oil
-- For the herbed garlic salt
+
+### For the herbed garlic salt
+
 - 1 tsp finely chopped sage
 - 1 clove garlic, crushed
 - 25g Maldon salt

@@ -21,7 +21,7 @@ tags:
 - 350ml port (half a bottle)
 - 2 tbsp vegetable oil
 - 1 tbsp plain flour
-- 250ml beef stock , made from a cube
+- 250ml beef stock, made from a cube
 
 ### For the spiced beetroot:
 
