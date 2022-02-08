@@ -1,7 +1,7 @@
 {
   "name": "Recipes++",
   "short_name": "rpp",
-  "theme_color": "#1976d2",
+  "theme_color": "#226699",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
@@ -11,13 +11,13 @@
       "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
       "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     }
   ]
 }

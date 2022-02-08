@@ -3,7 +3,9 @@ import Search from "./Search.tsx";
 ---
 
 <header class="header">
-  <a href="/" class="home-link"><span class="material-icons">home</span></a>
+  <a href="/" class="home-link">
+    <img src="/icons/favicon-32x32.png" alt="Home" />
+  </a>
   <Search client:visible />
 </header>
 
@@ -13,7 +15,7 @@ import Search from "./Search.tsx";
     align-items: center;
   }
   .home-link {
-    padding: 1rem 0.5rem;
-    margin-inline-end: 0.5rem;
+    margin-block-start: 7px;
+    margin-inline-end: 1rem;
   }
 </style>
