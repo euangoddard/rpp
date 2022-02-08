@@ -20,7 +20,11 @@ export default function StarredRecipes() {
           {recipes.map((recipe) => (
             <li>
               <a href={recipe.url}>{recipe.title}</a>
-              <button type="button" onClick={() => unstarRecipe(recipe)}>
+              <button
+                type="button"
+                class="star-button"
+                onClick={() => unstarRecipe(recipe)}
+              >
                 <span class="material-icons">star_outline</span>
               </button>
             </li>

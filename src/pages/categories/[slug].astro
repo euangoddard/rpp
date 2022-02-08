@@ -26,7 +26,7 @@ import Header from "../../components/Header.astro";
 
 const { slug } = Astro.request.params;
 const { tag, recipes } = Astro.props;
-const title = `${tag} category recipes`;
+const title = `${tag} recipes`;
 const description = `Recipes in the "${tag}" category`;
 const permalink = buildPermalink(`/categories/${slug}`);
 ---

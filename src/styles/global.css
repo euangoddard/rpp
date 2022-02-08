@@ -11,11 +11,17 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: rgba(0, 0, 0, 0.87);
-  padding: 0.5rem 1.5rem 1rem;
+  padding: 0.5rem 1rem 1rem;
   margin: 0;
   background: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+@media screen and (min-width: 640px) {
+  body {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
 h1,
 h2,
@@ -46,7 +52,7 @@ ul {
 }
 ol,
 ul {
-  padding-left: 3rem;
+  padding-left: 2rem;
 }
 li {
   margin: 0 0 0.5rem;
@@ -67,4 +73,17 @@ a {
   flex-shrink: 0;
   margin-right: 2rem;
   margin-bottom: 0;
+}
+
+.star-button {
+  background: transparent;
+  border: none;
+  color: #ffd600;
+  cursor: pointer;
+}
+
+@media print {
+  .star-button {
+    display: none;
+  }
 }

@@ -1,0 +1,60 @@
+---
+import { getTagSlug } from "../../lib/tags";
+
+import HeadInfo from "../../components/HeadInfo.astro";
+import Header from "../../components/Header.astro";
+
+const recipes = Astro.fetchContent("../recipes/*.md");
+const tagsWithCount = new Map<string, number>();
+for (const { tags } of recipes) {
+  for (const tag of tags) {
+    const count = tagsWithCount.get(tag) ?? 0;
+    tagsWithCount.set(tag, count + 1);
+  }
+}
+
+interface TagData {
+  name: string;
+  url: string;
+  count: number;
+}
+
+const tags: TagData[] = [];
+for (const [tag, count] of tagsWithCount.entries()) {
+  tags.push({
+    name: tag,
+    url: `/categories/${getTagSlug(tag)}`,
+    count,
+  });
+}
+
+tags.sort((a, b) => {
+  if (a.name < b.name) {
+    return -1;
+  }
+  if (a.name > b.name) {
+    return 1;
+  }
+  return 0;
+});
+const description = "Categories for recipes";
+const permalink = "/categories";
+---
+
+<head>
+  <HeadInfo title="All categories" {description} {permalink} />
+</head>
+
+<body>
+  <Header />
+  <h1>All categories</h1>
+  <ul>
+    {tags.map(({ name, url, count }) => (
+      <li>
+        <a href={url}>
+          {name} ({count})
+        </a>
+      </li>
+    ))}
+  </ul>
+</body>

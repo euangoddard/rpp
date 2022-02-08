@@ -13,6 +13,23 @@ import StarredRecipes from "../components/StarredRecipes.tsx";
   <Header />
   <RecentRecipes client:load />
   <StarredRecipes client:load />
-  <h2>Browse all recipes</h2>
-  <p><a href="/recipes/">Browse</a></p>
+  <h2>Browse recipes</h2>
+  <p class="browse-item">
+    <span class="material-icons">list</span>
+    <a href="/recipes">Recipes</a>
+  </p>
+  <p class="browse-item">
+    <span class="material-icons">category</span>
+    <a href="/categories">Categories</a>
+  </p>
 </body>
+
+<style>
+  .browse-item {
+    display: flex;
+    align-items: center;
+  }
+  .material-icons {
+    margin-right: 0.25rem;
+  }
+</style>

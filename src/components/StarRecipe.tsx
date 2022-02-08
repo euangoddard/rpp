@@ -29,13 +29,21 @@ export default function StarRecipe({ recipe }: StarRecipeProps) {
   };
 
   const starButton = (
-    <button type="button" onClick={() => setIsStarred(true)}>
+    <button
+      type="button"
+      class="star-button"
+      onClick={() => setIsStarred(true)}
+    >
       <span class="material-icons">star</span>
     </button>
   );
 
   const unstarButton = (
-    <button type="button" onClick={() => setIsStarred(false)}>
+    <button
+      type="button"
+      class="star-button"
+      onClick={() => setIsStarred(false)}
+    >
       <span class="material-icons">star_outline</span>
     </button>
   );

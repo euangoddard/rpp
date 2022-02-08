@@ -14,6 +14,11 @@ import Search from "./Search.tsx";
     display: flex;
     align-items: center;
   }
+  @media print {
+    .header {
+      display: none;
+    }
+  }
   .home-link {
     margin-block-start: 7px;
     margin-inline-end: 1rem;
