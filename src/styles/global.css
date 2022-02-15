@@ -78,8 +78,12 @@ a {
 .star-button {
   background: transparent;
   border: none;
-  color: #ffd600;
+  color: rgba(0, 0, 0, 0.35);
   cursor: pointer;
+}
+
+.star-button.starred {
+  color: #ffd600;
 }
 
 @media print {

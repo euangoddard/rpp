@@ -19,14 +19,16 @@ export default function StarredRecipes() {
         <ol>
           {recipes.map((recipe) => (
             <li>
-              <a href={recipe.url}>{recipe.title}</a>
-              <button
-                type="button"
-                class="star-button"
-                onClick={() => unstarRecipe(recipe)}
-              >
-                <span class="material-icons">star_outline</span>
-              </button>
+              <span style="display: inline-flex; align-items: center;">
+                <a href={recipe.url}>{recipe.title}</a>
+                <button
+                  type="button"
+                  class="star-button starred"
+                  onClick={() => unstarRecipe(recipe)}
+                >
+                  <span class="material-icons">star</span>
+                </button>
+              </span>
             </li>
           ))}
         </ol>

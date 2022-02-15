@@ -6,7 +6,7 @@ import StoreRecentRecipe from "../components/StoreRecentRecipe.tsx";
 import StarRecipe from "../components/StarRecipe.tsx";
 import { buildPermalink } from "../lib/permalink";
 const { content } = Astro.props;
-const { title, serves, tags, slug } = content;
+const { title, serves, tags, slug, prep, cook } = content;
 const permalink = buildPermalink(`/recipes/${slug}`);
 const recipeSynopsis = { title: content.title, url: `/recipes/${slug}` };
 ---
@@ -19,12 +19,18 @@ const recipeSynopsis = { title: content.title, url: `/recipes/${slug}` };
   <body>
     <Header />
     <StoreRecentRecipe recipe={recipeSynopsis} client:idle />
-    <h1>
+    <h1 class="recipe-title">
       {title}
       <StarRecipe client:load recipe={recipeSynopsis} />
     </h1>
 
     <p>Serves {serves}</p>
+    {(prep || cook) && (
+      <p>
+        {prep && <span>Prep: {prep}</span>} {cook && <span>Cook: {cook}</span>}
+      </p>
+    )}
+
     <section class="recipe-detail">
       <slot />
     </section>
@@ -42,5 +48,9 @@ const recipeSynopsis = { title: content.title, url: `/recipes/${slug}` };
   }
   .recipe-categories {
     padding-bottom: 2rem;
+  }
+  .recipe-title {
+    display: flex;
+    align-items: flex-start;
   }
 </style>
