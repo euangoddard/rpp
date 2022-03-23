@@ -91,3 +91,7 @@ a {
     display: none;
   }
 }
+
+.recipe__cooking .star-button {
+  display: none;
+}

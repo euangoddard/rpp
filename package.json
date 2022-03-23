@@ -11,6 +11,7 @@
     "index-recipes": "node scripts/index-recipes.js"
   },
   "devDependencies": {
+    "@types/dom-screen-wake-lock": "^1.0.0",
     "astro": "^0.24.3",
     "fast-glob": "^3.2.11",
     "front-matter": "^4.0.2",

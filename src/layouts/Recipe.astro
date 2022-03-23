@@ -4,6 +4,7 @@ import Categories from "../components/Categories.astro";
 import Header from "../components/Header.astro";
 import StoreRecentRecipe from "../components/StoreRecentRecipe.tsx";
 import StarRecipe from "../components/StarRecipe.tsx";
+import CookMode from "../components/CookMode.tsx";
 import { buildPermalink } from "../lib/permalink";
 const { content } = Astro.props;
 const { title, serves, tags, slug, prep, cook } = content;
@@ -23,6 +24,7 @@ const recipeSynopsis = { title: content.title, url: `/recipes/${slug}` };
       {title}
       <StarRecipe client:load recipe={recipeSynopsis} />
     </h1>
+    <CookMode client:idle />
 
     <p>Serves {serves}</p>
     {(prep || cook) && (
