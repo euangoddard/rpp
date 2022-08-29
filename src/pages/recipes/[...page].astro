@@ -6,7 +6,7 @@ import RecipesList from "../../components/RecipesList.astro";
 import Header from "../../components/Header.astro";
 
 export async function getStaticPaths({ paginate }) {
-  const data = Astro.fetchContent("./*.md");
+  const data = await Astro.glob("./*.md");
   return paginate(data, { pageSize: 40 });
 }
 

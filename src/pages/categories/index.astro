@@ -4,10 +4,10 @@ import { getTagSlug } from "../../lib/tags";
 import HeadInfo from "../../components/HeadInfo.astro";
 import Header from "../../components/Header.astro";
 
-const recipes = Astro.fetchContent("../recipes/*.md");
+const recipes = await Astro.glob("../recipes/*.md");
 const tagsWithCount = new Map<string, number>();
-for (const { tags } of recipes) {
-  for (const tag of tags) {
+for (const recipe of recipes) {
+  for (const tag of recipe.frontmatter.tags) {
     const count = tagsWithCount.get(tag) ?? 0;
     tagsWithCount.set(tag, count + 1);
   }

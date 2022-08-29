@@ -5,10 +5,10 @@ const { recipes } = Astro.props;
 ---
 
 <ol>
-  {recipes.map(({ title, url, tags }) => (
+  {recipes.map(({ frontmatter, url }) => (
     <li>
-      <a href={url}>{title}</a>
-      {includeCategories ? <Categories categories={tags} /> : " "}
+      <a href={url}>{frontmatter.title}</a>
+      {includeCategories ? <Categories categories={frontmatter.tags} /> : " "}
     </li>
   ))}
 </ol>
