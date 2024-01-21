@@ -5,7 +5,7 @@ slug: "roast-chicken-mustard-marmalade"
 serves: 4
 tags:
   - Chicken
-  - Roast
+  - Roasts
 ---
 
 ## Ingredients
