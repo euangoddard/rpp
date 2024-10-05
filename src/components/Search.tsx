@@ -69,7 +69,6 @@ export default function Search() {
         id="search"
         autocomplete="off"
         class={styles.searchInput}
-        value={query}
       />
 
       {query ? (
