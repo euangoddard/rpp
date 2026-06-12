@@ -4,3 +4,7 @@ export interface RecipePointer {
 }
 
 export type RecipePointers = readonly RecipePointer[];
+
+export interface RecipeListItem extends RecipePointer {
+  tags: readonly string[];
+}

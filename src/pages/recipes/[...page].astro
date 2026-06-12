@@ -1,13 +1,26 @@
 ---
+import type { GetStaticPaths, Page } from "astro";
+import { getCollection } from "astro:content";
+import type { RecipeListItem } from "../../lib/models";
 import { buildPermalink } from "../../lib/permalink";
-import HeadInfo from "../../components/HeadInfo.astro";
+import Base from "../../layouts/Base.astro";
 import Pagination from "../../components/Pagination.astro";
 import RecipesList from "../../components/RecipesList.astro";
-import Header from "../../components/Header.astro";
 
-export async function getStaticPaths({ paginate }) {
-  const data = await Astro.glob("./*.md");
-  return paginate(data, { pageSize: 40 });
+export const getStaticPaths = (async ({ paginate }) => {
+  const recipes = await getCollection("recipes");
+  const items: RecipeListItem[] = recipes
+    .map((recipe) => ({
+      title: recipe.data.title,
+      url: `/recipes/${recipe.id}`,
+      tags: recipe.data.tags,
+    }))
+    .sort((a, b) => a.title.localeCompare(b.title));
+  return paginate(items, { pageSize: 40 });
+}) satisfies GetStaticPaths;
+
+interface Props {
+  page: Page<RecipeListItem>;
 }
 
 const { page } = Astro.props;
@@ -16,12 +29,8 @@ const description = `Browse all recipes [Page ${page.currentPage} of ${page.last
 const permalink = buildPermalink(page.url.current);
 ---
 
-<head>
-  <HeadInfo {title} {description} {permalink} />
-</head>
-<body>
-  <Header />
-  <h1>{title}</h1>
+<Base {title} {description} {permalink}>
+  <h1 class="mb-7 text-3xl sm:text-4xl">{title}</h1>
   <RecipesList recipes={page.data} includeCategories={true} />
   <Pagination {page} />
-</body>
+</Base>

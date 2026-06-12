@@ -1,54 +1,69 @@
-# Astro Starter Kit: Blog
+# recipes++
 
-```
-npm init astro -- --template blog
-```
+A personal recipe collection at [recipes.euans.space](https://recipes.euans.space).
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
+Built with [Astro 6](https://astro.build) (static output) and Preact islands,
+styled with [Tailwind CSS v4](https://tailwindcss.com), and deployed as a
+[Cloudflare Worker](https://developers.cloudflare.com/workers/) that serves the
+prebuilt site via Workers Static Assets and handles search at `/api/search`.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-Features:
-
-- ✅ SEO-friendly setup with canonical URLs and OpenGraph data
-- ✅ Full Markdown support
-- ✅ RSS 2.0 generation
-- ✅ Sitemap.xml generation
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## Project structure
 
 ```
 /
-├── public/
-│   ├── robots.txt
-│   └── favicon.ico
+├── public/                  # static files (icons, manifest)
+├── scripts/
+│   └── index-recipes.mjs    # builds worker/search-data.json from the recipes
 ├── src/
-│   ├── components/
-│   │   └── Tour.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/          # Astro components + Preact islands
+│   ├── content/recipes/     # the recipes (markdown content collection)
+│   ├── content.config.ts    # collection schema
+│   ├── layouts/
+│   ├── lib/
+│   ├── pages/
+│   └── styles/global.css    # Tailwind theme + cookbook styles
+├── worker/
+│   ├── index.ts             # Cloudflare Worker entry (assets + /api/search)
+│   ├── search.js            # FlexSearch engine shared with dev middleware
+│   └── search-data.json     # generated search index (gitignored)
+└── wrangler.jsonc           # Worker + static assets + custom domain config
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Search
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+`npm run index-recipes` extracts title, tags, and deduplicated body words from
+every recipe into `worker/search-data.json`. The Worker builds a
+[FlexSearch](https://github.com/nextapps-de/flexsearch) index from it at
+startup and serves `GET /api/search?q=…`. During `astro dev` the same engine is
+exposed by a Vite middleware (see `astro.config.mjs`), so search works locally
+too. The index script runs automatically before `dev` and `build`.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Commands
 
-## 🧞 Commands
+| Command              | Action                                           |
+| :------------------- | :----------------------------------------------- |
+| `npm install`        | Install dependencies                             |
+| `npm run dev`        | Start the dev server at `localhost:4321`         |
+| `npm run build`      | Build the search index and site into `./dist/`   |
+| `npm run preview`    | Build, then serve the real Worker via `wrangler` |
+| `npm run deploy`     | Build and deploy to Cloudflare                   |
+| `npm run cf-typegen` | Regenerate Worker types (`worker-configuration`) |
 
-All commands are run from the root of the project, from a terminal:
+## Adding a recipe
 
-| Command           | Action                                       |
-|:----------------  |:-------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3000`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
+Drop a markdown file in `src/content/recipes/` with frontmatter:
 
-## 👀 Want to learn more?
+```yaml
+---
+title: Brownies
+slug: brownies # becomes /recipes/<slug>
+serves: 16
+tags:
+  - Baking
+prep: 20 min # optional
+cook: 30 min # optional
+source: https://… # optional
+---
+```
 
-Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).
+followed by `## Ingredients` and `## Method` sections.

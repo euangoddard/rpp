@@ -1,28 +1,36 @@
 ---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import type { RecipeListItem } from "../../lib/models";
 import { getTagSlug } from "../../lib/tags";
 import { buildPermalink } from "../../lib/permalink";
+import Base from "../../layouts/Base.astro";
+import RecipesList from "../../components/RecipesList.astro";
 
-export async function getStaticPaths() {
-  const recipes = await Astro.glob("../recipes/*.md");
-  const tags = new Set(recipes.map((recipe) => recipe.frontmatter.tags).flat());
-  const tagsOpts = Array.from(tags).map((tag: string) => {
+export const getStaticPaths = (async () => {
+  const recipes = await getCollection("recipes");
+  const tags = new Set(recipes.flatMap((recipe) => recipe.data.tags));
+  return [...tags].map((tag) => {
     const slug = getTagSlug(tag);
+    const tagged: RecipeListItem[] = recipes
+      .filter((recipe) => recipe.data.tags.some((t) => getTagSlug(t) === slug))
+      .map((recipe) => ({
+        title: recipe.data.title,
+        url: `/recipes/${recipe.id}`,
+        tags: recipe.data.tags,
+      }))
+      .sort((a, b) => a.title.localeCompare(b.title));
     return {
       params: { slug },
-      props: {
-        tag,
-        recipes: recipes.filter((recipe) => {
-          return recipe.frontmatter.tags.some((t) => getTagSlug(t) === slug);
-        }),
-      },
+      props: { tag, recipes: tagged },
     };
   });
-  return tagsOpts;
-}
+}) satisfies GetStaticPaths;
 
-import RecipesList from "../../components/RecipesList.astro";
-import HeadInfo from "../../components/HeadInfo.astro";
-import Header from "../../components/Header.astro";
+interface Props {
+  tag: string;
+  recipes: RecipeListItem[];
+}
 
 const { slug } = Astro.params;
 const { tag, recipes } = Astro.props;
@@ -31,12 +39,7 @@ const description = `Recipes in the "${tag}" category`;
 const permalink = buildPermalink(`/categories/${slug}`);
 ---
 
-<head>
-  <HeadInfo {title} {description} {permalink} />
-</head>
-
-<body>
-  <Header />
-  <h1>{title}</h1>
+<Base {title} {description} {permalink}>
+  <h1 class="mb-7 text-3xl sm:text-4xl">{title}</h1>
   <RecipesList {recipes} />
-</body>
+</Base>

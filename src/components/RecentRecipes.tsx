@@ -4,21 +4,24 @@ import type { RecipePointers } from "../lib/models";
 export default function RecentRecipes() {
   const [recipes] = usePersistedState<RecipePointers>("recentRecipes", []);
   return (
-    <div>
-      <h2>Recently viewed recipes</h2>
+    <section class="mb-10">
+      <h2 class="border-line mb-4 border-b pb-2 text-2xl">Recently viewed</h2>
       {recipes.length ? (
-        <ol>
+        <ol class="space-y-2.5">
           {recipes.map((recipe) => (
-            <li>
-              <a href={recipe.url}>{recipe.title}</a>
+            <li key={recipe.url}>
+              <a
+                href={recipe.url}
+                class="text-accent underline-offset-2 hover:underline"
+              >
+                {recipe.title}
+              </a>
             </li>
           ))}
         </ol>
       ) : (
-        <p>
-          <em>No recent recipes</em>
-        </p>
+        <p class="text-ink-soft">Recipes you open will show up here.</p>
       )}
-    </div>
+    </section>
   );
 }

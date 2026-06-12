@@ -2,25 +2,24 @@
 import Search from "./Search.tsx";
 ---
 
-<header class="header">
-  <a href="/" class="home-link">
-    <img src="/icons/favicon-32x32.png" alt="Home" width="32" height="32" />
+<header
+  class="mb-8 flex flex-wrap items-center gap-x-6 gap-y-4 sm:mb-12"
+  data-hide-when-cooking
+  data-hide-in-print
+>
+  <a
+    href="/"
+    class="font-display text-ink text-2xl font-semibold tracking-tight"
+  >
+    recipes<span class="text-accent">++</span>
   </a>
-  <Search client:visible />
+  <nav class="meta-label flex gap-5">
+    <a href="/recipes" class="hover:text-accent transition-colors">Recipes</a>
+    <a href="/categories" class="hover:text-accent transition-colors"
+      >Categories</a
+    >
+  </nav>
+  <div class="w-full grow sm:w-auto sm:basis-52">
+    <Search client:visible />
+  </div>
 </header>
-
-<style>
-  .header {
-    display: flex;
-    align-items: center;
-  }
-  @media print {
-    .header {
-      display: none;
-    }
-  }
-  .home-link {
-    margin-block-start: 7px;
-    margin-inline-end: 1rem;
-  }
-</style>

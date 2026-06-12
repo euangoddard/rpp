@@ -10,7 +10,7 @@ export interface StoreRecentRecipeProps {
 export default function StoreRecentRecipe({ recipe }: StoreRecentRecipeProps) {
   const [recipes, setRecipes] = usePersistedState<RecipePointers>(
     "recentRecipes",
-    []
+    [],
   );
   useEffect(() => {
     setRecipes(pushRecipeToCollection(recipes, recipe).slice(0, 5));

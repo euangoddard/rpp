@@ -1,97 +1,146 @@
-* {
-  box-sizing: border-box;
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces Variable", Georgia, "Times New Roman", serif;
+  --font-sans: "Public Sans Variable", system-ui, sans-serif;
+
+  /* Warm cookbook-paper palette */
+  --color-paper: oklch(0.985 0.007 85);
+  --color-paper-deep: oklch(0.955 0.013 85);
+  --color-line: oklch(0.88 0.015 80);
+  --color-ink: oklch(0.28 0.022 65);
+  --color-ink-soft: oklch(0.5 0.025 65);
+  --color-accent: oklch(0.47 0.088 238);
+  --color-accent-deep: oklch(0.38 0.085 238);
+  --color-star: oklch(0.72 0.14 80);
+
+  --tracking-meta: 0.08em;
 }
-body,
-html {
-  height: 100%;
-}
-body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
-    sans-serif, Apple Color Emoji, Segoe UI Emoji;
-  font-size: 16px;
-  line-height: 1.5;
-  color: rgba(0, 0, 0, 0.87);
-  padding: 0.5rem 1rem 1rem;
-  margin: 0;
-  background: #fff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-@media screen and (min-width: 640px) {
-  body {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+
+@layer base {
+  html {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 540;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: oklch(0.9 0.04 85);
   }
 }
-h1,
-h2,
-h3,
-h4 {
-  font-family: Baskervilla, Georgia, Times, serif;
-  margin: 0 0 1rem;
-  font-weight: 500;
-  line-height: 1.15;
-}
-h1 {
-  font-size: 2.5rem;
-}
-h2 {
-  font-size: 2rem;
-}
-h3 {
-  font-size: 1.75rem;
-}
-h4 {
-  margin: 1.5rem 0 0.5rem;
-  font-size: 1.25rem;
-}
-p,
-ol,
-ul {
-  margin: 0 0 1rem;
-}
-ol,
-ul {
-  padding-left: 2rem;
-}
-li {
-  margin: 0 0 0.5rem;
-}
-a {
-  text-decoration-skip-ink: auto;
-}
-.recipe-section {
-  margin-bottom: 2rem;
+
+@layer components {
+  /* Small-caps label used for meta lines ("SERVES 6 · PREP 20 MIN") */
+  .meta-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: var(--tracking-meta);
+    text-transform: uppercase;
+    color: var(--color-ink-soft);
+  }
+
+  /* Markdown body of a recipe, set like a cookbook page */
+  .recipe-prose {
+    max-width: 42rem;
+    line-height: 1.65;
+  }
+  .recipe-prose h2 {
+    margin-block: 2.25rem 0.875rem;
+    padding-block-end: 0.375rem;
+    border-block-end: 1px solid var(--color-line);
+    font-size: 1.5rem;
+  }
+  .recipe-prose h3 {
+    margin-block: 1.75rem 0.75rem;
+    font-size: 1.1875rem;
+  }
+  .recipe-prose p {
+    margin-block: 0.875rem;
+  }
+  .recipe-prose a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+  }
+  .recipe-prose ul {
+    margin-block: 0.875rem;
+    padding-inline-start: 1.125rem;
+  }
+  .recipe-prose ul > li {
+    margin-block: 0.4375rem;
+    padding-inline-start: 0.375rem;
+  }
+  .recipe-prose ul > li::marker {
+    content: "— ";
+    color: var(--color-ink-soft);
+  }
+  .recipe-prose ol {
+    margin-block: 0.875rem;
+    list-style: none;
+    counter-reset: step;
+  }
+  .recipe-prose ol > li {
+    counter-increment: step;
+    position: relative;
+    margin-block: 1rem;
+    padding-inline-start: 2.5rem;
+  }
+  .recipe-prose ol > li::before {
+    content: counter(step);
+    position: absolute;
+    inset-inline-start: 0;
+    top: -0.1875rem;
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--color-accent);
+  }
+
+  /* Star toggle (used by Preact islands via plain classes) */
+  .star-button {
+    background: transparent;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    color: oklch(0.78 0.02 70);
+    transition:
+      color 150ms ease-out,
+      transform 150ms ease-out;
+  }
+  .star-button:hover {
+    color: var(--color-star);
+    transform: scale(1.1);
+  }
+  .star-button.starred {
+    color: var(--color-star);
+  }
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
+/* Cooking mode: hide everything that isn't the recipe, enlarge the text */
+.recipe__cooking .star-button,
+.recipe__cooking [data-hide-when-cooking] {
+  display: none;
 }
-.header h1 {
-  flex-shrink: 0;
-  margin-right: 2rem;
-  margin-bottom: 0;
-}
-
-.star-button {
-  background: transparent;
-  border: none;
-  color: rgba(0, 0, 0, 0.35);
-  cursor: pointer;
-}
-
-.star-button.starred {
-  color: #ffd600;
+.recipe__cooking .recipe-prose {
+  font-size: 1.125rem;
 }
 
 @media print {
-  .star-button {
-    display: none;
+  .star-button,
+  [data-hide-when-cooking],
+  [data-hide-in-print] {
+    display: none !important;
   }
-}
-
-.recipe__cooking .star-button {
-  display: none;
 }

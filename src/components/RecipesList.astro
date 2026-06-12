@@ -1,14 +1,27 @@
 ---
+import type { RecipeListItem } from "../lib/models";
 import Categories from "./Categories.astro";
-const includeCategories = !!Astro.props["includeCategories"];
-const { recipes } = Astro.props;
+
+interface Props {
+  recipes: readonly RecipeListItem[];
+  includeCategories?: boolean;
+}
+
+const { recipes, includeCategories = false } = Astro.props;
 ---
 
-<ol>
-  {recipes.map(({ frontmatter, url }) => (
-    <li>
-      <a href={url}>{frontmatter.title}</a>
-      {includeCategories ? <Categories categories={frontmatter.tags} /> : " "}
-    </li>
-  ))}
+<ol class="space-y-3">
+  {
+    recipes.map(({ title, url, tags }) => (
+      <li class="flex flex-wrap items-baseline gap-x-3 gap-y-1.5">
+        <a
+          href={url}
+          class="text-accent text-[1.0625rem] underline-offset-2 hover:underline"
+        >
+          {title}
+        </a>
+        {includeCategories && <Categories categories={tags} />}
+      </li>
+    ))
+  }
 </ol>

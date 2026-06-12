@@ -1,0 +1,22 @@
+---
+import Base from "../layouts/Base.astro";
+import { buildPermalink } from "../lib/permalink";
+---
+
+<Base
+  title="Not found"
+  description="This page could not be found"
+  permalink={buildPermalink("/404")}
+>
+  <section class="py-12 text-center">
+    <p class="meta-label mb-3">404</p>
+    <h1 class="mb-4 text-4xl">Nothing's cooking here</h1>
+    <p class="text-ink-soft mx-auto max-w-md">
+      That page doesn't exist — it may have been renamed or eaten. Try the
+      search above, or head back to <a
+        href="/"
+        class="text-accent underline underline-offset-2">the kitchen</a
+      >.
+    </p>
+  </section>
+</Base>

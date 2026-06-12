@@ -1,58 +1,68 @@
 ---
-import HeadInfo from "../components/HeadInfo.astro";
+import type { CollectionEntry } from "astro:content";
+import Base from "./Base.astro";
 import Categories from "../components/Categories.astro";
-import Header from "../components/Header.astro";
 import StoreRecentRecipe from "../components/StoreRecentRecipe.tsx";
 import StarRecipe from "../components/StarRecipe.tsx";
 import CookMode from "../components/CookMode.tsx";
 import { buildPermalink } from "../lib/permalink";
-const { content } = Astro.props;
-const { title, serves, tags, slug, prep, cook } = content;
-const permalink = buildPermalink(`/recipes/${slug}`);
-const recipeSynopsis = { title: content.title, url: `/recipes/${slug}` };
+
+interface Props {
+  recipe: CollectionEntry<"recipes">;
+}
+
+const { recipe } = Astro.props;
+const { title, serves, tags, prep, cook, source } = recipe.data;
+const permalink = buildPermalink(`/recipes/${recipe.id}`);
+const recipeSynopsis = { title, url: `/recipes/${recipe.id}` };
+
+const metaParts = [
+  `Serves ${serves}`,
+  prep && `Prep ${prep}`,
+  cook && `Cook ${cook}`,
+].filter(Boolean);
 ---
 
-<html lang="en">
-  <head>
-    <HeadInfo {title} description={title} {permalink} />
-  </head>
-
-  <body>
-    <Header />
+<Base {title} description={title} {permalink}>
+  <article>
     <StoreRecentRecipe recipe={recipeSynopsis} client:idle />
-    <h1 class="recipe-title">
-      {title}
-      <StarRecipe client:load recipe={recipeSynopsis} />
-    </h1>
-    <CookMode client:idle />
-
-    <p>Serves {serves}</p>
-    {(prep || cook) && (
-      <p>
-        {prep && <span>Prep: {prep}</span>} {cook && <span>Cook: {cook}</span>}
+    <header class="mb-7">
+      <div class="flex items-start justify-between gap-3">
+        <h1 class="text-4xl sm:text-[2.75rem]">{title}</h1>
+        <StarRecipe client:load recipe={recipeSynopsis} />
+      </div>
+      <p class="meta-label border-line mt-4 border-b pb-4">
+        {metaParts.join(" · ")}
       </p>
-    )}
+    </header>
 
-    <section class="recipe-detail">
+    <section class="recipe-prose">
       <slot />
     </section>
-    <aside class="recipe-categories">
-      <h3>Categories</h3>
+
+    {
+      source && (
+        <p class="mt-8" data-hide-when-cooking>
+          <a
+            href={source}
+            rel="noopener"
+            class="text-accent text-sm underline underline-offset-2"
+          >
+            Original recipe ↗
+          </a>
+        </p>
+      )
+    }
+
+    <aside
+      class="border-line mt-12 border-t pt-5 pb-6"
+      data-hide-when-cooking
+      data-hide-in-print
+    >
+      <h2 class="meta-label mb-3 font-sans">Categories</h2>
       <Categories categories={tags} />
     </aside>
-  </body>
-</html>
 
-<style>
-  .recipe-detail {
-    margin-bottom: 2rem;
-    max-width: 760px;
-  }
-  .recipe-categories {
-    padding-bottom: 2rem;
-  }
-  .recipe-title {
-    display: flex;
-    align-items: flex-start;
-  }
-</style>
+    <CookMode client:idle />
+  </article>
+</Base>

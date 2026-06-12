@@ -1,5 +1,4 @@
-import { useState, useEffect } from "preact/hooks";
-import * as styles from "./CookMode.module.css";
+import { useEffect, useState } from "preact/hooks";
 
 const cookingClass = "recipe__cooking";
 
@@ -19,26 +18,38 @@ export default function CookMode() {
     }
   }, [isWakeLocked]);
 
+  if (!canWakeLock) {
+    return null;
+  }
+
   return (
-    canWakeLock && (
-      <aside class={styles.cookMode}>
-        <label class={styles.label}>
-          <input
-            type="checkbox"
-            checked={isCooking}
-            onChange={(e) => setIsCooking(e.target.checked)}
-          />
-          Cooking mode
-        </label>
-      </aside>
-    )
+    <aside
+      class="pointer-events-none fixed inset-x-0 bottom-4 flex justify-center"
+      data-hide-in-print
+    >
+      <label
+        class={`pointer-events-auto flex cursor-pointer items-center gap-2.5 rounded-full px-5 py-2.5 text-sm font-medium shadow-lg shadow-black/15 transition-colors select-none ${
+          isCooking
+            ? "bg-accent-deep text-paper"
+            : "bg-accent text-paper hover:bg-accent-deep"
+        }`}
+      >
+        <input
+          type="checkbox"
+          class="accent-paper size-4"
+          checked={isCooking}
+          onChange={(e) => setIsCooking((e.target as HTMLInputElement).checked)}
+        />
+        {isCooking ? "Cooking — screen will stay awake" : "Cooking mode"}
+      </label>
+    </aside>
   );
 }
 
 const useWakeLock = (): [
   boolean,
   boolean,
-  (shouldLock: boolean) => Promise<void>
+  (shouldLock: boolean) => Promise<void>,
 ] => {
   const [canWakeLock, setCanWakeLock] = useState(false);
   const [wakeLock, storeWakeLock] = useState<WakeLockSentinel | null>(null);
@@ -69,7 +80,7 @@ const useWakeLock = (): [
         });
         storeWakeLock(newWakeLock);
       } catch (err) {
-        console.error(`${err.name}, ${err.message}`);
+        console.error(err);
       }
     } else if (wakeLock) {
       await wakeLock.release();

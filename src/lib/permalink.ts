@@ -1,3 +1,3 @@
 export const buildPermalink = (path: string): string => {
-  return `https://rpp.euans.space${path}`;
+  return new URL(path, import.meta.env.SITE).toString();
 };

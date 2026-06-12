@@ -1,6 +1,5 @@
-import { useState, useEffect } from "preact/hooks";
-import * as styles from "./Search.module.css";
-import classnames from "classnames";
+import { useEffect, useRef, useState } from "preact/hooks";
+import { CloseIcon, SearchIcon } from "./icons";
 
 interface RecipeResult {
   url: string;
@@ -11,29 +10,29 @@ interface RecipeResult {
 const useSearch = (): [
   readonly RecipeResult[],
   string,
-  (query: string) => void
+  (query: string) => void,
 ] => {
   const [query, setQuery] = useState("");
   const [searchResults, setResults] = useState<readonly RecipeResult[]>([]);
-  const [abortController, setAbortController] = useState(new AbortController());
+  const abortController = useRef<AbortController | null>(null);
 
   useEffect(() => {
-    if (!query?.trim()) {
+    if (!query.trim()) {
+      setResults([]);
       return;
     }
-    abortController.abort();
+    abortController.current?.abort();
     const ctrl = new AbortController();
-    setAbortController(ctrl);
+    abortController.current = ctrl;
     const fetchResults = async () => {
       try {
         const response = await fetch(
-          `/.netlify/functions/search?q=${encodeURIComponent(query)}`,
-          {
-            signal: ctrl.signal,
-          }
+          `/api/search?q=${encodeURIComponent(query)}`,
+          { signal: ctrl.signal },
         );
-        setResults((await response.json())["results"]);
-      } catch (e) {
+        const data = (await response.json()) as { results: RecipeResult[] };
+        setResults(data.results);
+      } catch {
         setResults([]);
       }
     };
@@ -44,75 +43,78 @@ const useSearch = (): [
 };
 
 export default function Search() {
-  const [isActive, setActive] = useState(false);
   const [searchResults, query, setQuery] = useSearch();
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const runSearch = (e) => {
-    setQuery(e.target.value);
+  const runSearch = debounce((e: Event) => {
+    setQuery((e.target as HTMLInputElement).value);
+  });
+
+  const clear = () => {
+    setQuery("");
+    if (inputRef.current) {
+      inputRef.current.value = "";
+    }
   };
 
   return (
-    <div
-      class={classnames({
-        [styles.search]: true,
-        [styles.searchActive]: isActive,
-      })}
-    >
-      <i class="material-icons">search</i>
-      <input
-        type="text"
-        placeholder="Search recipes"
-        onFocus={() => setActive(true)}
-        onBlur={() => setActive(false)}
-        onKeyup={debounce(runSearch)}
-        onInput={debounce(runSearch)}
-        id="search"
-        autocomplete="off"
-        class={styles.searchInput}
-      />
+    <div class="relative" onKeyDown={(e) => e.key === "Escape" && clear()}>
+      <div class="border-line focus-within:border-accent flex h-11 items-center gap-2.5 rounded-lg border bg-white/55 px-3.5 transition-colors focus-within:bg-white/90">
+        <SearchIcon class="text-ink-soft size-4 shrink-0" />
+        <input
+          ref={inputRef}
+          type="search"
+          placeholder="Search recipes"
+          onInput={runSearch}
+          id="search"
+          autocomplete="off"
+          class="text-ink placeholder:text-ink-soft w-full min-w-0 grow bg-transparent text-base outline-none [&::-webkit-search-cancel-button]:hidden"
+        />
+        {query && (
+          <button
+            type="button"
+            aria-label="Clear search"
+            class="text-ink-soft hover:text-ink cursor-pointer transition-colors"
+            onClick={clear}
+          >
+            <CloseIcon class="size-4" />
+          </button>
+        )}
+      </div>
 
-      {query ? (
-        <div class={styles.searchResults}>
-          <header class={styles.searchResultsHeader}>
-            <h2>
-              Search results for <strong>{query}</strong>
-            </h2>
-            <span class={styles.spacer}></span>
-            <button
-              type="button"
-              class={styles.closeResults}
-              onClick={() => setQuery("")}
-            >
-              <i class="material-icons">close</i>
-            </button>
-          </header>
+      {query && (
+        <div class="border-line bg-paper absolute inset-x-0 top-full z-10 mt-2 max-h-[24rem] overflow-auto rounded-lg border p-4 shadow-lg shadow-black/5">
           {searchResults.length ? (
-            <ul>
+            <ul class="space-y-2">
               {searchResults.map((recipe) => (
-                <li>
-                  <a href={recipe.url}>{recipe.title}</a>
+                <li key={recipe.url}>
+                  <a
+                    href={recipe.url}
+                    class="text-accent underline-offset-2 hover:underline"
+                  >
+                    {recipe.title}
+                  </a>
                 </li>
               ))}
             </ul>
           ) : (
-            <p>
-              There are no results for <strong>{query}</strong>
+            <p class="text-ink-soft text-sm">
+              No results for <strong class="text-ink">{query}</strong>
             </p>
           )}
         </div>
-      ) : (
-        ""
       )}
     </div>
   );
 }
 
-function debounce(func: Function, timeout = 250) {
-  let timer: NodeJS.Timeout;
-  return (...args: unknown[]) => {
+function debounce<A extends unknown[]>(
+  func: (...args: A) => void,
+  timeout = 250,
+) {
+  let timer: ReturnType<typeof setTimeout>;
+  return (...args: A) => {
     clearTimeout(timer);
-    timer = setTimeout(() => {
-      func.apply(this, args);
-    }, timeout);
+    timer = setTimeout(() => func(...args), timeout);
   };
 }

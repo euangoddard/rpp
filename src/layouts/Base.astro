@@ -1,0 +1,29 @@
+---
+import "@fontsource-variable/fraunces/index.css";
+import "@fontsource-variable/public-sans/index.css";
+import "../styles/global.css";
+import HeadInfo from "../components/HeadInfo.astro";
+import Header from "../components/Header.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  permalink: string;
+}
+
+const { title, description, permalink } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <HeadInfo {title} {description} {permalink} />
+  </head>
+  <body class="min-h-dvh">
+    <div class="mx-auto max-w-3xl px-4 pt-5 pb-20 sm:px-6 sm:pt-7">
+      <Header />
+      <main>
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

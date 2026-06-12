@@ -5,6 +5,7 @@ import {
   pullRecipeFromCollection,
   pushRecipeToCollection,
 } from "../lib/recipe-collection";
+import { StarIcon } from "./icons";
 
 interface StarRecipeProps {
   recipe: RecipePointer;
@@ -13,40 +14,27 @@ interface StarRecipeProps {
 export default function StarRecipe({ recipe }: StarRecipeProps) {
   const [recipes, setRecipes] = usePersistedState<RecipePointers>(
     "starredRecipes",
-    []
+    [],
   );
 
   const isStarred = hasCollectionRecipe(recipes, recipe);
 
-  const setIsStarred = (value: boolean): void => {
-    let starredRecipes: RecipePointers;
-    if (value) {
-      starredRecipes = pushRecipeToCollection(recipes, recipe);
-    } else {
-      starredRecipes = pullRecipeFromCollection(recipes, recipe);
-    }
-    setRecipes(starredRecipes);
+  const toggleStarred = (): void => {
+    setRecipes(
+      isStarred
+        ? pullRecipeFromCollection(recipes, recipe)
+        : pushRecipeToCollection(recipes, recipe),
+    );
   };
 
-  const starButton = (
+  return (
     <button
       type="button"
-      class="star-button"
-      onClick={() => setIsStarred(true)}
+      class={`star-button ${isStarred ? "starred" : ""}`}
+      aria-label={isStarred ? "Unstar this recipe" : "Star this recipe"}
+      onClick={toggleStarred}
     >
-      <span class="material-icons">star_outline</span>
+      <StarIcon class="size-6" filled={isStarred} />
     </button>
   );
-
-  const unstarButton = (
-    <button
-      type="button"
-      class="star-button starred"
-      onClick={() => setIsStarred(false)}
-    >
-      <span class="material-icons">star</span>
-    </button>
-  );
-
-  return isStarred ? unstarButton : starButton;
 }

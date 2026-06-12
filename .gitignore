@@ -16,6 +16,9 @@ yarn-error.log*
 # macOS-specific files
 .DS_Store
 
-# Local Netlify folder
-.netlify
-search-index.json
+# generated search index
+worker/search-data.json
+
+# wrangler
+.wrangler/
+worker-configuration.d.ts

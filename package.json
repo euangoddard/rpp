@@ -1,28 +1,40 @@
 {
   "name": "rpp",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
+    "predev": "npm run index-recipes",
     "dev": "astro dev",
-    "start": "astro dev",
+    "start": "npm run dev",
     "prebuild": "npm run index-recipes",
     "build": "astro build",
-    "preview": "astro preview",
-    "index-recipes": "node scripts/index-recipes.js"
+    "check": "astro check",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "index-recipes": "node scripts/index-recipes.mjs",
+    "cf-typegen": "wrangler types"
   },
   "devDependencies": {
-    "@astrojs/preact": "^2.2.1",
-    "@types/dom-screen-wake-lock": "^1.0.1",
-    "astro": "^2.7.2",
-    "fast-glob": "^3.3.0",
+    "@astrojs/check": "^0.9.9",
+    "@astrojs/preact": "^5.1.5",
+    "@tailwindcss/vite": "^4.3.0",
+    "@types/dom-screen-wake-lock": "^1.0.3",
+    "@types/node": "^25.9.3",
+    "astro": "^6.4.6",
+    "fast-glob": "^3.3.3",
     "front-matter": "^4.0.2",
-    "prettier": "^2.8.8",
-    "prettier-plugin-astro": "^0.10.0"
+    "prettier": "^3.8.4",
+    "prettier-plugin-astro": "^0.14.1",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3",
+    "wrangler": "^4.100.0"
   },
   "dependencies": {
-    "@types/lunr": "^2.3.4",
-    "classnames": "^2.3.2",
-    "lunr": "^2.3.9",
-    "slugify": "^1.6.6"
+    "@fontsource-variable/fraunces": "^5.2.9",
+    "@fontsource-variable/public-sans": "^5.2.7",
+    "flexsearch": "^0.8.212",
+    "preact": "^10.29.2",
+    "slugify": "^1.6.9"
   }
 }

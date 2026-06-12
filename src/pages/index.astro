@@ -1,35 +1,44 @@
 ---
-import Header from "../components/Header.astro";
-import HeadInfo from "../components/HeadInfo.astro";
+import Base from "../layouts/Base.astro";
 import RecentRecipes from "../components/RecentRecipes.tsx";
 import StarredRecipes from "../components/StarredRecipes.tsx";
+import { ArrowRightIcon } from "../components/icons";
+import { buildPermalink } from "../lib/permalink";
 ---
 
-<head>
-  <HeadInfo title="Home" description="Welcome to recipes++" permalink="/" />
-</head>
-
-<body>
-  <Header />
+<Base
+  title="Home"
+  description="Welcome to recipes++"
+  permalink={buildPermalink("/")}
+>
   <RecentRecipes client:load />
   <StarredRecipes client:load />
-  <h2>Browse recipes</h2>
-  <p class="browse-item">
-    <span class="material-icons">list</span>
-    <a href="/recipes">Recipes</a>
-  </p>
-  <p class="browse-item">
-    <span class="material-icons">category</span>
-    <a href="/categories">Categories</a>
-  </p>
-</body>
 
-<style>
-  .browse-item {
-    display: flex;
-    align-items: center;
-  }
-  .material-icons {
-    margin-right: 0.25rem;
-  }
-</style>
+  <section>
+    <h2 class="border-line mb-4 border-b pb-2 text-2xl">Browse</h2>
+    <ul class="space-y-3">
+      <li>
+        <a
+          href="/recipes"
+          class="text-accent group inline-flex items-center gap-2 text-[1.0625rem] underline-offset-2 hover:underline"
+        >
+          All recipes
+          <ArrowRightIcon
+            class="size-4 transition-transform group-hover:translate-x-0.5"
+          />
+        </a>
+      </li>
+      <li>
+        <a
+          href="/categories"
+          class="text-accent group inline-flex items-center gap-2 text-[1.0625rem] underline-offset-2 hover:underline"
+        >
+          Categories
+          <ArrowRightIcon
+            class="size-4 transition-transform group-hover:translate-x-0.5"
+          />
+        </a>
+      </li>
+    </ul>
+  </section>
+</Base>

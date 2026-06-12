@@ -1,13 +1,13 @@
 ---
+import { getCollection } from "astro:content";
 import { getTagSlug } from "../../lib/tags";
+import { buildPermalink } from "../../lib/permalink";
+import Base from "../../layouts/Base.astro";
 
-import HeadInfo from "../../components/HeadInfo.astro";
-import Header from "../../components/Header.astro";
-
-const recipes = await Astro.glob("../recipes/*.md");
+const recipes = await getCollection("recipes");
 const tagsWithCount = new Map<string, number>();
 for (const recipe of recipes) {
-  for (const tag of recipe.frontmatter.tags) {
+  for (const tag of recipe.data.tags) {
     const count = tagsWithCount.get(tag) ?? 0;
     tagsWithCount.set(tag, count + 1);
   }
@@ -19,42 +19,33 @@ interface TagData {
   count: number;
 }
 
-const tags: TagData[] = [];
-for (const [tag, count] of tagsWithCount.entries()) {
-  tags.push({
+const tags: TagData[] = [...tagsWithCount.entries()]
+  .map(([tag, count]) => ({
     name: tag,
     url: `/categories/${getTagSlug(tag)}`,
     count,
-  });
-}
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
 
-tags.sort((a, b) => {
-  if (a.name < b.name) {
-    return -1;
-  }
-  if (a.name > b.name) {
-    return 1;
-  }
-  return 0;
-});
 const description = "Categories for recipes";
-const permalink = "/categories";
+const permalink = buildPermalink("/categories");
 ---
 
-<head>
-  <HeadInfo title="All categories" {description} {permalink} />
-</head>
-
-<body>
-  <Header />
-  <h1>All categories</h1>
-  <ul>
-    {tags.map(({ name, url, count }) => (
-      <li>
-        <a href={url}>
-          {name} ({count})
-        </a>
-      </li>
-    ))}
+<Base title="All categories" {description} {permalink}>
+  <h1 class="mb-7 text-3xl sm:text-4xl">All categories</h1>
+  <ul class="flex flex-wrap gap-2">
+    {
+      tags.map(({ name, url, count }) => (
+        <li>
+          <a
+            href={url}
+            class="border-line bg-paper-deep text-ink hover:border-accent hover:text-accent inline-flex items-baseline gap-1.5 rounded-full border px-3.5 py-1.5 text-[0.9375rem] font-medium transition-colors"
+          >
+            {name}
+            <span class="text-ink-soft text-[0.75rem]">{count}</span>
+          </a>
+        </li>
+      ))
+    }
   </ul>
-</body>
+</Base>
