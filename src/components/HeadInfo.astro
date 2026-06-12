@@ -10,35 +10,32 @@ const { title, description, permalink } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <link
   rel="apple-touch-icon"
   sizes="180x180"
   href="/icons/apple-touch-icon.png"
 />
-<link
-  rel="icon"
-  type="image/png"
-  sizes="32x32"
-  href="/icons/favicon-32x32.png"
-/>
-<link
-  rel="icon"
-  type="image/png"
-  sizes="16x16"
-  href="/icons/favicon-16x16.png"
-/>
 <link rel="manifest" href="/site.webmanifest" />
-<meta name="theme-color" content="#226699" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0ece3" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#2d2926" />
 
 <!-- Primary Meta Tags -->
 <title>Recipes++ :: {title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 
-<!-- Open Graph / Facebook -->
+<!-- Open Graph -->
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content="Recipes++" />
 <meta property="og:url" content={permalink} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content="/icons/icon-512x512.png" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content="/icons/icon-512x512.png" />

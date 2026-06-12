@@ -21,9 +21,17 @@ const metaParts = [
   prep && `Prep ${prep}`,
   cook && `Cook ${cook}`,
 ].filter(Boolean);
+
+const descriptionParts = [
+  [`Serves ${serves}`, prep && `prep ${prep}`, cook && `cook ${cook}`]
+    .filter(Boolean)
+    .join(", "),
+  tags.length > 0 ? `Categories: ${tags.join(", ")}` : null,
+].filter(Boolean) as string[];
+const description = descriptionParts.join(". ");
 ---
 
-<Base {title} description={title} {permalink}>
+<Base {title} {description} {permalink}>
   <article>
     <StoreRecentRecipe recipe={recipeSynopsis} client:idle />
     <header class="mb-7">

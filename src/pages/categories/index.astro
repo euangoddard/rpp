@@ -27,7 +27,7 @@ const tags: TagData[] = [...tagsWithCount.entries()]
   }))
   .sort((a, b) => a.name.localeCompare(b.name));
 
-const description = "Categories for recipes";
+const description = `Browse all ${tagsWithCount.size} recipe categories.`;
 const permalink = buildPermalink("/categories");
 ---
 

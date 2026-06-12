@@ -13,11 +13,13 @@
     "preview": "npm run build && wrangler dev",
     "deploy": "npm run build && wrangler deploy",
     "index-recipes": "node scripts/index-recipes.mjs",
+    "generate-icons": "node scripts/generate-icons.mjs",
     "cf-typegen": "wrangler types"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/preact": "^5.1.5",
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/vite": "^4.3.0",
     "@types/dom-screen-wake-lock": "^1.0.3",
     "@types/node": "^25.9.3",
