@@ -9,6 +9,7 @@
     "start": "npm run dev",
     "prebuild": "npm run index-recipes",
     "build": "astro build",
+    "build:netlify": "mkdir -p netlify-dist && printf '/* https://recipes.euans.space/:splat 301!\\n' > netlify-dist/_redirects",
     "check": "astro check",
     "preview": "npm run build && wrangler dev",
     "deploy": "npm run build && wrangler deploy",
