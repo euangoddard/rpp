@@ -1,4 +1,4 @@
-import { createSearchEngine } from "./search.js";
+import { createSearchEngine } from "./search.ts";
 import searchData from "./search-data.json";
 
 const search = createSearchEngine(searchData);
