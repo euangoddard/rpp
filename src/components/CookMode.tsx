@@ -28,18 +28,25 @@ export default function CookMode() {
       data-hide-in-print
     >
       <label
-        class={`pointer-events-auto flex cursor-pointer items-center gap-2.5 rounded-full px-5 py-2.5 text-sm font-medium shadow-lg shadow-black/15 transition-colors select-none ${
+        class={`pointer-events-auto flex cursor-pointer items-center gap-2.5 overflow-hidden whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-medium shadow-lg shadow-black/15 transition-[max-width,background-color] duration-300 select-none ${
           isCooking
-            ? "bg-accent-deep text-paper"
-            : "bg-accent text-paper hover:bg-accent-deep"
+            ? "bg-accent-deep text-paper max-w-[22rem]"
+            : "bg-accent text-paper hover:bg-accent-deep max-w-[12rem]"
         }`}
       >
         <input
           type="checkbox"
-          class="accent-paper size-4"
+          class="sr-only"
           checked={isCooking}
           onChange={(e) => setIsCooking((e.target as HTMLInputElement).checked)}
         />
+        <div
+          class={`relative h-5 w-9 rounded-full transition-colors duration-300 ${isCooking ? "bg-paper/40" : "bg-paper/20"}`}
+        >
+          <div
+            class={`absolute top-0.5 left-0.5 h-4 w-4 rounded-full bg-paper shadow-sm transition-transform duration-300 ${isCooking ? "translate-x-4" : "translate-x-0"}`}
+          />
+        </div>
         {isCooking ? "Cooking — screen will stay awake" : "Cooking mode"}
       </label>
     </aside>
