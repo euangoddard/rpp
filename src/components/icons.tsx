@@ -1,6 +1,6 @@
-import type { JSX } from "preact";
+import type { SVGAttributes } from "preact";
 
-type IconProps = JSX.SVGAttributes<SVGSVGElement>;
+type IconProps = SVGAttributes<SVGSVGElement>;
 
 const base = (props: IconProps): IconProps => ({
   xmlns: "http://www.w3.org/2000/svg",
