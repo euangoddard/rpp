@@ -22,7 +22,7 @@ tags:
 
 1. Heat oven to 190ºC.
 1. Grate the zest from one of the oranges and mix into the softened butter with the rosemary, salt and pepper.
-1. Season inside the turkey. Quarter both the oranges and the onion and put inside the body cavity of the turkey. 
+1. Season inside the turkey. Quarter both the oranges and the onion and put inside the body cavity of the turkey.
 1. Stuff the neck of the turkey with stuffing (if desired).
 1. Place the turkey in a roasting tin and spread the orange butter generously over the breast and legs.
 1. Tie the legs together to give it a good shape and cover it with a tent of loose foil. Don’t seal it around the roasting tin or it will steam the bird.

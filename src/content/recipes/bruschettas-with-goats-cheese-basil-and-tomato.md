@@ -9,18 +9,18 @@ tags:
 
 ## Ingredients
 
-- 1 small slim French loaf (sometimes called baguettine) 
-- approximately 2 oz (50 g) mild, creamy goats' cheese (the spreadable kind that comes in tubs is fine) 
-- 3-4 fresh basil leaves 
-- 2 firm, medium-sized tomatoes 
-- 1½ tablespoons good-quality olive oil 
-- 1 clove garlic, crushed 
-- 1 level tablespoon Italian pesto 
-- sea salt and freshly milled black pepper 
+- 1 small slim French loaf (sometimes called baguettine)
+- approximately 2 oz (50 g) mild, creamy goats' cheese (the spreadable kind that comes in tubs is fine)
+- 3-4 fresh basil leaves
+- 2 firm, medium-sized tomatoes
+- 1½ tablespoons good-quality olive oil
+- 1 clove garlic, crushed
+- 1 level tablespoon Italian pesto
+- sea salt and freshly milled black pepper
 
 ## Method
 
-1. Pre-heat the oven to gas mark 4, 350°F (180°C). 
+1. Pre-heat the oven to gas mark 4, 350°F (180°C).
 1. First combine about 1 tablespoon olive oil with the crushed garlic and spread over the baking sheet, then slice the bread into thinnish rounds; you won't need all the loaf. Now arrange the slices on the baking sheet, press them into the oil then turn them the other way up so that each surface has a slight coating of garlicky oil.
 1. Bake them in the centre of the oven for 20-25 minutes, or until they have turned a golden brown and become very crisp. Do watch the timing on this.
 1. Cool on a wire rack and store in an airtight tin until you need them (they will be okay for up to 2 weeks, which is very helpful).

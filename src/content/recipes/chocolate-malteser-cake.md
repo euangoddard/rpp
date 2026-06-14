@@ -9,7 +9,6 @@ tags:
 
 ## Ingredients
 
-
 ### For the cake:
 
 - 150g soft light brown sugar

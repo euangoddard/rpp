@@ -22,4 +22,4 @@ tags:
 1. Gradually sift the flour into the mixture, stirring in between each amount added.
 1. Spoon the mixture into bun cases (at least two teaspoons per case) and place in the oven until lightly golden (about 20 minutes).
 1. Allow the buns to cool. Melt the white chocolate in the microwave and spoon over the buns.
-1. Whilst the  chocolate is still liquid, add the 100s and 1000s.
+1. Whilst the chocolate is still liquid, add the 100s and 1000s.

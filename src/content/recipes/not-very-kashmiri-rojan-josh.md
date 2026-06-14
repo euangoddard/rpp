@@ -9,7 +9,6 @@ tags:
 
 ## Ingredients
 
-
 ### Marinade ingredients
 
 - 200ml natural yoghurt

@@ -3,9 +3,7 @@ title: Banana Bread Muffins
 slug: "banana-bread-muffins"
 serves: 12
 tags:
-
-- Baking
-
+  - Baking
 ---
 
 ## Ingredients

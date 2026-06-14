@@ -19,4 +19,4 @@ tags:
 
 1. Make the sauce. Place the chopped tomatoes in a pan with the garlic, oil, oregano/marjoram and season to taste. Bring to the boil and simmer for 10 minutes, stirring once or twice. Take off the heat, stir in the basil and set aside.
 1. Cook steak as prefer.
-1. Serve with  warmed sauce.
+1. Serve with warmed sauce.

@@ -9,7 +9,6 @@ tags:
 
 ## Ingredients
 
-
 ### For the filling
 
 - 2 tablespoons olive oil

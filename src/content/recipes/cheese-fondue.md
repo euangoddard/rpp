@@ -26,7 +26,7 @@ tags:
 
 ## Method
 
-1. Put the cheese into the fondue pot with the wine and heat until boiling. 
+1. Put the cheese into the fondue pot with the wine and heat until boiling.
 1. Turn the pot down to a simmer.
 1. Slake the corn flour with the kirsch and add to the fondue pot along with the garlic.
 1. Season with the pepper and nutmeg

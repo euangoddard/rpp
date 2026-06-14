@@ -8,7 +8,6 @@ tags:
 
 ## Ingredients
 
-
 ### For the sauce:
 
 - olive oil

@@ -8,7 +8,6 @@ tags:
 
 ## Ingredients
 
-
 ### For the pastry
 
 - 200 g cold unsalted butter, cubed

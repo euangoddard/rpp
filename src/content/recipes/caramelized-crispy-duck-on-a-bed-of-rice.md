@@ -8,7 +8,6 @@ tags:
 
 ## Ingredients
 
-
 ### For the duck
 
 - ½ duck breast, sliced at an angle
@@ -30,7 +29,7 @@ tags:
 
 ## Method
 
-1. Cut the duck breast into thin slices. 
+1. Cut the duck breast into thin slices.
 1. Season the flour with salt and pepper and coat the duck slices in the flour.
 1. Heat the oil in a frying pan and fry the duck for two minutes.
 1. Add all the other ingredients for the duck and simmer for 2-3 minutes.

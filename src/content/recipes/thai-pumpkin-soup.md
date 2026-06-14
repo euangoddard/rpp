@@ -15,7 +15,7 @@ tags:
 - 1.25kg pumpkin, deseeded and chopped
 - 400ml coconut milk
 - 500ml chicken stock
-- 15g coriander 
+- 15g coriander
 - sugar and salt to taste
 
 ## Method

@@ -18,8 +18,8 @@ tags:
 
 ## Method
 
-1. Using a pestle and mortar (or finely chop) the thyme with some salt. 
-1. When pulped, add the garlic and some pepper and pound again. 
+1. Using a pestle and mortar (or finely chop) the thyme with some salt.
+1. When pulped, add the garlic and some pepper and pound again.
 1. Stir in the lemon juice, zest and olive oil.
 1. Smear over the chops and leave for at least 10 mins.
 1. Place chops on a very hot griddle or frying pan. Cook through.

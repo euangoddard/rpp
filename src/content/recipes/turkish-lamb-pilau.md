@@ -11,7 +11,7 @@ tags:
 - handful pine nuts or flaked almonds
 - 1 tbsp olive oil
 - 1 large onion, sliced
--  2 cinnamon sticks, broken in half
+- 2 cinnamon sticks, broken in half
 - 250g basmati rice
 - 1 lamb or vegetable stock cube
 - 12 dried apricots, cut in half

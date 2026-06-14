@@ -13,7 +13,7 @@ tags:
 - 1 tsp medium curry powder
 - ½ tsp ground turmeric
 - ¼ tsp ground ginger
-- ¼ tsp cumin seeds 
+- ¼ tsp cumin seeds
 - 1 tbsp vegetable oil
 - 1 small leek, diced
 - 2 garlic cloves, crushed

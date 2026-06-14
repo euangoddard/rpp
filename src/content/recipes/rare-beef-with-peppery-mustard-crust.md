@@ -9,12 +9,12 @@ tags:
 
 ## Ingredients
 
-- 4 garlic cloves 
-- 2 tbsp lemon thyme leaves 
-- 1 tbsp black peppercorns 
-- 1 tbsp wholegrain mustard 
-- 4 anchovies 
-- 2 tbsp olive oil 
+- 4 garlic cloves
+- 2 tbsp lemon thyme leaves
+- 1 tbsp black peppercorns
+- 1 tbsp wholegrain mustard
+- 4 anchovies
+- 2 tbsp olive oil
 
 ## Method
 

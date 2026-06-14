@@ -9,7 +9,6 @@ tags:
 
 ## Ingredients
 
-
 ### For the pie
 
 - 2 cans of cooked, drained, borlotti beans, mashed

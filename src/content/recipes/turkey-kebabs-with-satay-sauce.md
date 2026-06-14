@@ -8,7 +8,6 @@ tags:
 
 ## Ingredients
 
-
 ### For the kebabs:
 
 - 2 cloves garlic, chopped
@@ -21,7 +20,7 @@ tags:
 - handful of mint or coriander or mixture of both
 - 4 turkey breasts
 
-### For the satay sauce: 
+### For the satay sauce:
 
 - 250g/9oz peanut butter - smooth or crunchy
 - 3 tbsp dark soy sauce

@@ -8,7 +8,6 @@ tags:
 
 ## Ingredients
 
-
 ### For the cake:
 
 - 140g butter, softened

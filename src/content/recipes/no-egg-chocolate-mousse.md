@@ -20,4 +20,4 @@ tags:
 
 1. Melt the marshmallows, butter, chocolate and water together on very low heat stirring occasionally.
 1. Whip the cream with vanilla extract and then fold this in when the chocolate mixture has cooled.
-1. Pour mixture into serving glasses/bowls/ramekins as required and chill in fridge until you want to eat them! 
+1. Pour mixture into serving glasses/bowls/ramekins as required and chill in fridge until you want to eat them!

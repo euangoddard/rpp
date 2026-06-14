@@ -20,7 +20,7 @@ tags:
 ## Method
 
 1. Fry the onion for 5 minutes until softened.
-1. Stir in the red curry paste, then add the squash, coconut milk and stock. 
+1. Stir in the red curry paste, then add the squash, coconut milk and stock.
 1. Simmer for 10 minutes, then add the green beans and simmer for another 10 minutes until the squash is tender.
 1. Stir in the pineapple and coriander, cooking for a few minutes until the pineapple heats through.
 1. Sprinkle with coriander leaves.

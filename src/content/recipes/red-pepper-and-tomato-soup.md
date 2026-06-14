@@ -13,7 +13,7 @@ tags:
 - 2 garlic cloves, crushed
 - 1 red pepper, deseeded and diced
 - 3 tbsp tomato purée
-- 1 tsp fresh thyme, chopped 
+- 1 tsp fresh thyme, chopped
 - 1 chicken stock cube
 - 50ml/2fl oz white wine
 - 200ml/7fl oz water, boiling
@@ -34,6 +34,6 @@ tags:
 1. Simmer for 10 minutes.
 1. Purée using a handheld blender.
 1. Put into a bowl and garnish with a swirl of yoghurt and croutons.
-1. Dice the bread into cubes. 
+1. Dice the bread into cubes.
 1. Drizzle over the olive oil and sprinkle over the thyme.
 1. Put the diced bread onto a baking tray and cook in a hot oven for 10 minutes. Alternatively, fry in a pan with some butter for 8 minutes.

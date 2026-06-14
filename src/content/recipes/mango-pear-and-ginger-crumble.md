@@ -9,7 +9,6 @@ tags:
 
 ## Ingredients
 
-
 ### Filling:
 
 - 450g ripe pears, peeled, cored and thickly sliced

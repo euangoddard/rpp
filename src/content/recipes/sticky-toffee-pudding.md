@@ -8,7 +8,6 @@ tags:
 
 ## Ingredients
 
-
 ### For the puddings:
 
 - 225g whole dates, preferably Medjool

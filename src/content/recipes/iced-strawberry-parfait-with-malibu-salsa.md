@@ -8,7 +8,6 @@ tags:
 
 ## Ingredients
 
-
 ### For the parfait:
 
 - 400ml coconut milk

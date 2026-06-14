@@ -27,6 +27,6 @@ tags:
 1. Add the olive oil and cook for another 2 minutes, stirring to avoid the bacon sticking. The bacon should be firm but not browned.
 1. Tip in the tomato puree and then fill the empty tin with water and empty this into the pan **two times**.
 1. Add the wine. sugar and dried herbs. Stir well and bring to the boil for 5 minutes.
-1. Turn down the heat and summer for 2 hours with the saucepan lid very slightly ajar. 
+1. Turn down the heat and summer for 2 hours with the saucepan lid very slightly ajar.
 1. As the time for the sauce is coming to an end, cook the spaghetti as per the packet instructions then drain.
 1. Add the basil to the sauce and then and toss half with the pasta, using the remainder to place a generous extra portion on top of each serving, with some Parmesan.

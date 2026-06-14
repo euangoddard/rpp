@@ -9,7 +9,6 @@ tags:
 
 ## Ingredients
 
-
 ### For the bang bang sauce:
 
 - 2 tsp groundnut oil

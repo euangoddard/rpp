@@ -8,7 +8,6 @@ tags:
 
 ## Ingredients
 
-
 ### For the vegetable stew:
 
 - 2 onions, peeled and roughly chopped
@@ -47,7 +46,7 @@ tags:
 
 ## Method
 
-1. Make the stew. Add the white onions, half the carrots, celery and garlic to a food processor. Process to a fine mush (or you can chop it all very finely by hand). 
+1. Make the stew. Add the white onions, half the carrots, celery and garlic to a food processor. Process to a fine mush (or you can chop it all very finely by hand).
 1. Fry the mixed vegetable until softened.
 1. Add the red onion to the cooking vegetables. Stir around for a few minutes. Add the rest of the vegetables and let them all soften.
 1. Sprinkle over all the spices, except the harissa.

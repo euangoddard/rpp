@@ -8,14 +8,14 @@ tags:
 
 ## Ingredients
 
-- 1 cooked chicken, about 3 lb (1.35 kg) or 33/4 lb (1.7 kg) raw weight 
-- 1 heaped teaspoon chopped fresh tarragon 
-- 4 oz (110 g) seedless green grapes, halved 
-- 5 fl oz (150 ml) mayonnaise, preferably home-made 
+- 1 cooked chicken, about 3 lb (1.35 kg) or 33/4 lb (1.7 kg) raw weight
+- 1 heaped teaspoon chopped fresh tarragon
+- 4 oz (110 g) seedless green grapes, halved
+- 5 fl oz (150 ml) mayonnaise, preferably home-made
 - 3 fl oz (75 ml) double cream
 - 1 teaspoon wholegrain mustard
-- 3 spring onions, finely chopped 
-- 1 small lettuce, washed and allowed to dry 
+- 3 spring onions, finely chopped
+- 1 small lettuce, washed and allowed to dry
 - few sprigs watercress
 - a handful of cherry tomatoes
 

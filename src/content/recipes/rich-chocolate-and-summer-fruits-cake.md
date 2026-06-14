@@ -8,7 +8,6 @@ tags:
 
 ## Ingredients
 
-
 ### Cake
 
 - 50g cocoa
@@ -26,7 +25,6 @@ tags:
 - 450g fresh summer fruits (e.g blueberries, raspberries, strawberries)
 
 ### Icing sugar to decorate
-
 
 ## Method
 

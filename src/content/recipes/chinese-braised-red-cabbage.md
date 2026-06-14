@@ -18,7 +18,7 @@ tags:
 - 50g/2 oz caster sugar
 - 4 spring onions, finely sliced
 - toasted sesame seeds
-- 1 tbsp sesame oil 
+- 1 tbsp sesame oil
 
 ## Method
 

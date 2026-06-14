@@ -14,8 +14,8 @@ tags:
 
 ## Method
 
-1. Melt the butter. 
-1. Add the marshmallows and  stir until melted. 
+1. Melt the butter.
+1. Add the marshmallows and stir until melted.
 1. Add the Rice Krispies and stir until coated.
-1. Press the mixture into a  13x9in. pan.
+1. Press the mixture into a 13x9in. pan.
 1. Cool until set.

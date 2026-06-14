@@ -20,5 +20,5 @@ tags:
 ## Method
 
 1. Beat the crème fraîche with the vodka and a little seasoning until it holds its shape, then stir in the horseradish. Chill in the fridge.
-1. Lay the slices of salmon over plates, then top with the beetroot and a spoonful of the crème fraîche. 
+1. Lay the slices of salmon over plates, then top with the beetroot and a spoonful of the crème fraîche.
 1. Top with the salmon caviar, if using, then scatter with the dill. Grind over some black pepper and serve.

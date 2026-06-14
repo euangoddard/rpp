@@ -20,7 +20,7 @@ tags:
 
 ## Method
 
-1. Mix the butter and herbs together. 
+1. Mix the butter and herbs together.
 1. Smooth over the turkey.
 1. Cook!
 1. Notes: if using a whole turkey, stuff the inside with a quartered onion and a bunch of fresh coriander.

@@ -23,7 +23,7 @@ tags:
 1. Heat the oil and butter in a large non-stick saucepan and sauté the onion for 2-3 minutes to soften.
 1. Add the thyme leaves, spinach and seasoning and heat for a few minutes to wilt the spinach.
 1. Remove from the heat and stir in the cheese and nutmeg.
-1. Lay the turkey escalope flat on a chopping board. 
+1. Lay the turkey escalope flat on a chopping board.
 1. Spoon the spinach and cheese mixture onto the turkey and roll up. Secure using cocktail sticks.
 1. Transfer the turkey to the oven and cook for 20-25 minutes or until cooked through.
 1. Remove from the oven and allow to rest for a minute. Slice in half on the diagonal to serve.

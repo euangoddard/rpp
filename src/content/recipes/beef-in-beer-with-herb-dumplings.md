@@ -9,7 +9,6 @@ tags:
 
 ## Ingredients
 
-
 ### For the stew
 
 - 2 large onions, thinly sliced

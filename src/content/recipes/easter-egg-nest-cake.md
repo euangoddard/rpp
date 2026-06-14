@@ -9,7 +9,6 @@ tags:
 
 ## Ingredients
 
-
 ### For the cake
 
 - 250g best quality chocolate, chopped
@@ -21,7 +20,7 @@ tags:
 ### For the topping
 
 - 125g best quality chocolate, chopped
-- 250mls double cream 
+- 250mls double cream
 - 1 tsp real vanilla extract
 - little Easter eggs, e.g. Cadbury's mini eggs
 

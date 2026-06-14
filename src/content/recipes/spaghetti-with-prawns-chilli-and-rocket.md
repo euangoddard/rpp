@@ -19,5 +19,5 @@ tags:
 
 1. Cook the spaghetti.
 1. Fry the prawns over a high heat with the chilli. Season.
-1. Drain the spaghetti, mix in with the prawns with a little olive oil. 
+1. Drain the spaghetti, mix in with the prawns with a little olive oil.
 1. Fold through the rocket.

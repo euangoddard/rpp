@@ -9,7 +9,6 @@ tags:
 
 ## Ingredients
 
-
 ### For the cake:
 
 - 225g self-raising flour

@@ -8,7 +8,6 @@ tags:
 
 ## Ingredients
 
-
 ### For the cake
 
 - 200ml hot, strong black tea (use any type)

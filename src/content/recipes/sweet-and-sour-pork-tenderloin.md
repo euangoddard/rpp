@@ -10,7 +10,7 @@ tags:
 
 - 900g diced pork tenderloin
 - 4 tbsp soy suace
-- 1 orange, zested and tbsp of  juice
+- 1 orange, zested and tbsp of juice
 - 2 tbsp olive oil
 - 1 tbsp honey
 - 1 tbsp lemon juice

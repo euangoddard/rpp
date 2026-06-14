@@ -8,7 +8,7 @@ tags:
 
 ## Ingredients
 
-- 568ml double cream 
+- 568ml double cream
 - 140g caster sugar
 - 2 lemons, zest and juice
 

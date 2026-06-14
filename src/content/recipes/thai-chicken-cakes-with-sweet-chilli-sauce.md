@@ -18,6 +18,6 @@ tags:
 
 ## Method
 
-1. Blitz the chicken, garlic, ginger, onion, coriander, chilli and seasoning into a food processor until finely ground and well mixed. 
+1. Blitz the chicken, garlic, ginger, onion, coriander, chilli and seasoning into a food processor until finely ground and well mixed.
 1. Shape about 6 more cakes from the mixture.
 1. Fry the cakes over a medium heat for about 6-8 minutes.

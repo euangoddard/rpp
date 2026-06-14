@@ -18,5 +18,5 @@ tags:
 
 ## Method
 
-1. Heat oven to 220C/fan 200C/gas 7. In a roasting tin, toss the cauliflower, red onion, ground coriander and olive oil together with some salt and pepper. 
+1. Heat oven to 220C/fan 200C/gas 7. In a roasting tin, toss the cauliflower, red onion, ground coriander and olive oil together with some salt and pepper.
 1. Roast for 25 mins, tossing occasionally until the vegetables are starting to brown. Toss through the coriander and serve.

@@ -9,7 +9,7 @@ tags:
 
 ## Ingredients
 
-- 1 free-range  chicken, about 1.5kg
+- 1 free-range chicken, about 1.5kg
 - bunch rosemary
 - 3 tbsp olive oil
 - 4 red onions, left whole but peeled and trimmed

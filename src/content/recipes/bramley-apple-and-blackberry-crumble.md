@@ -9,7 +9,6 @@ tags:
 
 ## Ingredients
 
-
 ### Filling:
 
 - 3 large Bramley apples

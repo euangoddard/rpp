@@ -9,7 +9,7 @@ tags:
 
 ## Ingredients
 
-- 1.5kg  turkey mince (can use beef mince)
+- 1.5kg turkey mince (can use beef mince)
 - 2 large onions, minced
 - 2 tbsp olive oil (leave out for beef mince since it’s oily)
 - salt and pepper

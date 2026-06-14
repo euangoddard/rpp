@@ -26,4 +26,4 @@ tags:
 ## Method
 
 1. Fry the onions until golden-brown. Reduce the heat and then add the ginger, garlic, chilli powder, ground cumin, coriander and salt. Stir fry for about one minute. Allow to cool and then mix with the potatoes and with the lemon juice.
-1. When ready to serve, make the baghaar: add the chopped red chillies and seeds and fry constantly until the seeds turn a shade darker. Remove from the heat and pour the baghaar over the potato mixture. 
+1. When ready to serve, make the baghaar: add the chopped red chillies and seeds and fry constantly until the seeds turn a shade darker. Remove from the heat and pour the baghaar over the potato mixture.

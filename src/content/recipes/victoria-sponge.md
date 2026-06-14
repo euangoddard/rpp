@@ -9,7 +9,6 @@ tags:
 
 ## Ingredients
 
-
 ### For the sponge
 
 - 225g unsalted butter, softened

@@ -9,7 +9,6 @@ tags:
 
 ## Ingredients
 
-
 ### Dressing
 
 - 3 1/2 tbsp soya milk/milk

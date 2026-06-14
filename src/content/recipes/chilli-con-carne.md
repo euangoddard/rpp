@@ -16,7 +16,7 @@ tags:
 - 2x400g cans chopped tomatoes
 - 3 tbsp tomato purée
 - 2 red chillies, thinly sliced, or 3-4 tsp dried chilli flakes
-- 1 tsp ground cumin 
+- 1 tsp ground cumin
 - 1 tsp ground coriander
 - 1 stick cinnamon
 - good shake of Worcestershire sauce

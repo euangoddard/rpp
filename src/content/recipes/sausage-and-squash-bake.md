@@ -23,7 +23,7 @@ tags:
 1. Preheat oven to 200ºC.
 1. Cook the butternut squash in boiling, salted water for 5 minutes, until tender, and then drain.
 1. Fry the sausages until golden. Set aside.
-1. Lightly brown the butternut squash (in the same pan). 
+1. Lightly brown the butternut squash (in the same pan).
 1. In an oven dish mix together the sausages, the butternut squash, the pasta sauce and butterbeans. Season.
 1. Mix the breadcrumbs, the parmesan and parsley and scatter over the sausage mixture.
 1. Drizzle with a tbsp of oil and bake on a high shelf in the oven for about 20 minutes, until golden.

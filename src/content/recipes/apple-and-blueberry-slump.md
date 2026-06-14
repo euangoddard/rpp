@@ -8,8 +8,7 @@ tags:
 
 ## Ingredients
 
-
-### Filling 
+### Filling
 
 - 450g Bramley’s Apples, peeled, cored and thinly sliced
 - 25g butter
@@ -27,7 +26,7 @@ tags:
 
 ## Method
 
-1. Butter a 1.5 litre ovenproof dish. 
+1. Butter a 1.5 litre ovenproof dish.
 1. Heat the butter in a frying pan and fry the apple slices for 3-4 mins until they are just beginning to soften.
 1. Tip into the ovenproof dish, along with the blueberries and sugar. Mix lightly and set aside.
 1. For the slump, rub the butter into the flour until the mixture resembles fine crumbs, the stir in the sugar and the lemon zest (this mixture can then be covered for several hours before baking).

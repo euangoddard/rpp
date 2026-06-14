@@ -26,7 +26,7 @@ tags:
 
 1. Preheat the oven to 190ºC.
 1. Pour 4 tbsp of the oil into a large roasting pan and add the onion, aubergine, pepper and courgettes. Season. Toss in the oil and bake for 25 minutes, turning half-way through.
-1. If using fresh tomatoes, dilute the tomato paste with 225ml of boiling water, stirring well. 
+1. If using fresh tomatoes, dilute the tomato paste with 225ml of boiling water, stirring well.
 1. Add the tomatoes, tomato stock (if using) and garlic to the roasting pan. Mix into veg. and return to the oven.
 1. Meanwhile, cook the pasta for a minute or 2 less than the recommended time on the packet. Drain, add to the veg. and bake for another 5 minutes or until the pasta is cooked.
 1. Salt, pepper and sugar to taste. Stir in parsley and remaining oil.

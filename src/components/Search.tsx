@@ -99,7 +99,9 @@ export default function Search() {
           onKeyDown={handleKeyDown}
           id="search"
           autocomplete="off"
-          aria-activedescendant={highlightedIndex >= 0 ? `result-${highlightedIndex}` : undefined}
+          aria-activedescendant={
+            highlightedIndex >= 0 ? `result-${highlightedIndex}` : undefined
+          }
           class="text-ink placeholder:text-ink-soft w-full min-w-0 grow bg-transparent text-base outline-none [&::-webkit-search-cancel-button]:hidden"
         />
         {query && (
@@ -119,7 +121,12 @@ export default function Search() {
           {searchResults.length ? (
             <ul ref={listRef} class="space-y-2" role="listbox">
               {searchResults.map((recipe, index) => (
-                <li key={recipe.url} id={`result-${index}`} role="option" aria-selected={index === highlightedIndex}>
+                <li
+                  key={recipe.url}
+                  id={`result-${index}`}
+                  role="option"
+                  aria-selected={index === highlightedIndex}
+                >
                   <a
                     href={recipe.url}
                     class={`text-accent underline-offset-2 hover:underline block rounded px-1.5 py-0.5 -mx-1.5 transition-colors ${index === highlightedIndex ? "bg-accent/10" : ""}`}

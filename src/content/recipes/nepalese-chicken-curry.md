@@ -9,7 +9,6 @@ tags:
 
 ## Ingredients
 
-
 ### Main
 
 - 1kg chicken/4 breasts, diced

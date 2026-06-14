@@ -23,7 +23,7 @@ tags:
 1. Cook the rice/noodles.
 1. Seal the pork.
 1. Stir in the curry paste/powder and cook for 1 min until fragrant.
-1. Stir in the peanut butter, stock and coconut cream. 
+1. Stir in the peanut butter, stock and coconut cream.
 1. Bring to the boil and then simmer until pork is cooked and sauce has thickened.
 1. Meanwhile, stir-fry the vegetables.
 1. When the rice is cooked, mix in with the veg and sweet chilli sauce.
