@@ -1,9 +1,28 @@
 ---
+import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
 import RecentRecipes from "../components/RecentRecipes.tsx";
 import StarredRecipes from "../components/StarredRecipes.tsx";
 import { ArrowRightIcon } from "../components/icons";
+import { getTagUrl } from "../lib/tags";
 import { buildPermalink } from "../lib/permalink";
+
+const recipes = await getCollection("recipes");
+
+const tagsWithCount = new Map<string, number>();
+for (const recipe of recipes) {
+  for (const tag of recipe.data.tags) {
+    tagsWithCount.set(tag, (tagsWithCount.get(tag) ?? 0) + 1);
+  }
+}
+
+const recipeCount = recipes.length;
+const categoryCount = tagsWithCount.size;
+
+const featuredTags = [...tagsWithCount.entries()]
+  .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  .slice(0, 8)
+  .map(([name, count]) => ({ name, count, url: getTagUrl(name) }));
 ---
 
 <Base
@@ -11,34 +30,66 @@ import { buildPermalink } from "../lib/permalink";
   description="A personal recipe collection — browse, search, and cook your favourite recipes."
   permalink={buildPermalink("/")}
 >
-  <RecentRecipes client:load />
-  <StarredRecipes client:load />
+  <section class="border-line mb-12 border-b pb-10 sm:mb-14 sm:pb-12">
+    <p class="meta-label mb-3">
+      {recipeCount} recipes · {categoryCount} categories
+    </p>
+    <h1 class="text-4xl sm:text-5xl">Recipes worth cooking again.</h1>
+    <p class="text-ink-soft mt-4 max-w-prose text-lg leading-relaxed">
+      A personal cookbook of tried-and-tested favourites — search the lot, star
+      the keepers, and switch to cook mode when it's time to get your hands
+      messy.
+    </p>
+    <div class="mt-7 flex flex-wrap gap-3">
+      <a
+        href="/recipes"
+        class="bg-accent text-paper hover:bg-accent-deep group inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-medium transition-colors"
+      >
+        Browse all recipes
+        <ArrowRightIcon
+          class="size-4 transition-transform group-hover:translate-x-0.5"
+        />
+      </a>
+      <a
+        href="/categories"
+        class="border-line text-ink hover:border-accent hover:text-accent inline-flex items-center gap-2 rounded-full border px-5 py-2.5 font-medium transition-colors"
+      >
+        Browse by category
+      </a>
+    </div>
+  </section>
 
-  <section>
-    <h2 class="border-line mb-4 border-b pb-2 text-2xl">Browse</h2>
-    <ul class="space-y-3">
-      <li>
-        <a
-          href="/recipes"
-          class="text-accent group inline-flex items-center gap-2 text-[1.0625rem] underline-offset-2 hover:underline"
-        >
-          All recipes
-          <ArrowRightIcon
-            class="size-4 transition-transform group-hover:translate-x-0.5"
-          />
-        </a>
-      </li>
-      <li>
-        <a
-          href="/categories"
-          class="text-accent group inline-flex items-center gap-2 text-[1.0625rem] underline-offset-2 hover:underline"
-        >
-          Categories
-          <ArrowRightIcon
-            class="size-4 transition-transform group-hover:translate-x-0.5"
-          />
-        </a>
-      </li>
+  <section class="mb-12 sm:mb-14">
+    <div
+      class="border-line mb-4 flex items-baseline justify-between border-b pb-2"
+    >
+      <h2 class="text-2xl">Popular categories</h2>
+      <a
+        href="/categories"
+        class="meta-label hover:text-accent transition-colors"
+      >
+        All {categoryCount}
+      </a>
+    </div>
+    <ul class="flex flex-wrap gap-2">
+      {
+        featuredTags.map(({ name, url, count }) => (
+          <li>
+            <a
+              href={url}
+              class="border-line bg-paper-deep text-ink hover:border-accent hover:text-accent inline-flex items-baseline gap-1.5 rounded-full border px-3.5 py-1.5 text-[0.9375rem] font-medium transition-colors"
+            >
+              {name}
+              <span class="text-ink-soft text-[0.75rem]">{count}</span>
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </section>
+
+  <div class="grid gap-x-10 sm:grid-cols-2">
+    <RecentRecipes client:load />
+    <StarredRecipes client:load />
+  </div>
 </Base>
