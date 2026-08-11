@@ -18,13 +18,13 @@
     "cf-typegen": "wrangler types"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.9",
-    "@astrojs/preact": "^6.0.1",
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/preact": "^6.0.2",
     "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/vite": "^4.3.3",
     "@types/dom-screen-wake-lock": "^1.0.3",
     "@types/node": "^26.1.1",
-    "astro": "^7.1.3",
+    "astro": "^7.2.0",
     "fast-glob": "^3.3.3",
     "front-matter": "^4.0.2",
     "prettier": "^3.9.6",
