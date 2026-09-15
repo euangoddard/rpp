@@ -137,6 +137,55 @@
   font-size: 1.125rem;
 }
 
+/* Scroll anchoring would undo the shift that opens the split: the browser
+   compensates for the growing margin, so the panel ends up covering the method
+   rather than pushing it clear. */
+html:has(> body.recipe__cooking) {
+  overflow-anchor: none;
+}
+
+/* The copy of the ingredients pinned above the method while cooking — set in
+   the display serif, and tighter than the page body so more of the list fits. */
+.pinned-ingredients {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+.pinned-ingredients h3 {
+  margin-block: 0.75rem 0.25rem;
+  font-size: 1rem;
+}
+.pinned-ingredients p {
+  margin-block: 0.5rem;
+}
+.pinned-ingredients ul {
+  margin-block: 0.5rem;
+  padding-inline-start: 1.125rem;
+}
+.pinned-ingredients ul > li {
+  margin-block: 0.25rem;
+  padding-inline-start: 0.375rem;
+}
+.pinned-ingredients ul > li::marker {
+  content: "\2014 ";
+  color: var(--color-ink-soft);
+}
+.pinned-ingredients > :first-child {
+  margin-block-start: 0;
+}
+.pinned-ingredients[data-more-below] {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 calc(100% - 1.75rem),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 calc(100% - 1.75rem),
+    transparent
+  );
+}
+
 @media print {
   .star-button,
   [data-hide-when-cooking],
