@@ -137,6 +137,33 @@
   font-size: 1.125rem;
 }
 
+/* Leave room at the foot of the page for the read-aloud controls, so the last
+   step can be scrolled clear of them. */
+body.recipe__cooking:has([data-method-reader]) > div {
+  padding-block-end: 10rem;
+}
+
+/* The step being read aloud — the tint is drawn with a spread shadow so it
+   bleeds past the text without nudging the layout. */
+.recipe-prose ol > li {
+  border-radius: 0.375rem;
+  transition:
+    background-color 200ms ease-out,
+    box-shadow 200ms ease-out;
+}
+.recipe-prose ol > li[data-reading] {
+  background-color: var(--color-paper-deep);
+  box-shadow: 0 0 0 0.625rem var(--color-paper-deep);
+}
+.recipe-prose ol > li[data-reading]::before {
+  color: var(--color-accent-deep);
+}
+@media (prefers-reduced-motion: reduce) {
+  .recipe-prose ol > li {
+    transition: none;
+  }
+}
+
 /* Scroll anchoring would undo the shift that opens the split: the browser
    compensates for the growing margin, so the panel ends up covering the method
    rather than pushing it clear. */

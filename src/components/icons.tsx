@@ -61,3 +61,30 @@ export const ChevronDownIcon = (props: IconProps) => (
     <path d="m6 9 6 6 6-6" />
   </svg>
 );
+
+export const PlayIcon = (props: IconProps) => (
+  <svg {...base(props)} fill="currentColor">
+    <path d="M6 4.8a1 1 0 0 1 1.5-.86l11.1 7.2a1 1 0 0 1 0 1.72l-11.1 7.2A1 1 0 0 1 6 19.2z" />
+  </svg>
+);
+
+export const StopIcon = (props: IconProps) => (
+  <svg {...base(props)} fill="currentColor">
+    <rect x="6" y="6" width="12" height="12" rx="1.5" />
+  </svg>
+);
+
+export const ReplayIcon = (props: IconProps) => (
+  <svg {...base(props)}>
+    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+    <path d="M3 3v5h5" />
+  </svg>
+);
+
+export const SpeakerIcon = (props: IconProps) => (
+  <svg {...base(props)}>
+    <path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z" />
+    <path d="M16 9a5 5 0 0 1 0 6" />
+    <path d="M19.4 18.4a9 9 0 0 0 0-12.8" />
+  </svg>
+);

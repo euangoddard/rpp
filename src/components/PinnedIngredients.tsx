@@ -130,6 +130,7 @@ export default function PinnedIngredients() {
       ref={panelRef}
       class="fixed inset-x-0 top-0 z-30"
       aria-label="Ingredients"
+      data-pinned-ingredients
       data-hide-in-print
     >
       <div

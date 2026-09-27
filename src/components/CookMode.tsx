@@ -1,5 +1,6 @@
 import { useEffect, useState } from "preact/hooks";
 import PinnedIngredients from "./PinnedIngredients";
+import MethodReader, { canReadAloud } from "./MethodReader";
 
 const cookingClass = "recipe__cooking";
 
@@ -27,9 +28,10 @@ export default function CookMode() {
     <>
       {isCooking && <PinnedIngredients />}
       <aside
-        class="pointer-events-none fixed inset-x-0 bottom-4 flex justify-center"
+        class="pointer-events-none fixed inset-x-0 bottom-4 flex flex-col items-center gap-3 px-4"
         data-hide-in-print
       >
+        {isCooking && canReadAloud() && <MethodReader />}
         <label
           class={`pointer-events-auto flex cursor-pointer items-center gap-2.5 overflow-hidden whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-medium shadow-lg shadow-black/15 transition-[max-width,background-color] duration-300 select-none ${
             isCooking
