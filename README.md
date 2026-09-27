@@ -38,6 +38,23 @@ startup and serves `GET /api/search?q=…`. During `astro dev` the same engine i
 exposed by a Vite middleware (see `astro.config.mjs`), so search works locally
 too. The index script runs automatically before `dev` and `build`.
 
+## Cook mode
+
+On devices that support the
+[Screen Wake Lock API](https://developer.mozilla.org/docs/Web/API/Screen_Wake_Lock_API),
+each recipe has a cooking-mode toggle. While it is on, the screen stays awake,
+page chrome is hidden, and the ingredients pin to the top of the screen once
+they scroll out of view (`CookMode.tsx`, `PinnedIngredients.tsx`).
+
+Where the device also supports
+[speech synthesis](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis),
+a read-aloud widget sits above the toggle (`MethodReader.tsx`). It reads the
+method one step at a time, with buttons for previous, next and replay/stop, and
+a picker to jump to any step. When the method is split by sub-headings, steps
+are numbered within each part as they are on the page, and the heading is read
+out when a new part begins. The step being read is highlighted and scrolled
+into view.
+
 ## Commands
 
 | Command              | Action                                           |
@@ -66,4 +83,6 @@ source: https://… # optional
 ---
 ```
 
-followed by `## Ingredients` and `## Method` sections.
+followed by `## Ingredients` and `## Method` sections. Write the method as a
+numbered list, using `###` sub-headings to split it into parts if needed. The
+read-aloud widget in cook mode reads from these lists.
