@@ -279,10 +279,15 @@ const useSpeech = (): [boolean, (text: string) => void, () => void] => {
     };
 
     speechSynthesis.cancel();
-    const sentences = splitSentences(text);
+    const locale = speechLocale();
+    const voice = pickVoice(speechSynthesis.getVoices(), locale);
+    const sentences = splitSentences(text, locale);
     sentences.forEach((sentence, i) => {
       const utterance = new SpeechSynthesisUtterance(sentence);
-      utterance.lang = document.documentElement.lang || navigator.language;
+      utterance.lang = voice ? voice.lang.replace(/_/g, "-") : locale;
+      if (voice) {
+        utterance.voice = voice;
+      }
       utterance.onerror = finish;
       if (i === sentences.length - 1) {
         utterance.onend = finish;
@@ -292,8 +297,11 @@ const useSpeech = (): [boolean, (text: string) => void, () => void] => {
     setIsSpeaking(true);
   };
 
-  // Don't carry on talking once cooking mode is switched off.
+  // Don't carry on talking once cooking mode is switched off. Asking for the
+  // voices up front also starts loading them in browsers that fetch them
+  // lazily (Chrome), so they're ready by the first tap.
   useEffect(() => {
+    speechSynthesis.getVoices();
     addEventListener("pagehide", stop);
     return () => {
       removeEventListener("pagehide", stop);
@@ -305,13 +313,53 @@ const useSpeech = (): [boolean, (text: string) => void, () => void] => {
   return [isSpeaking, speak, stop];
 };
 
-const splitSentences = (text: string): string[] => {
+/**
+ * The locale to read in: the reader's own preference for the page's language
+ * where they have one (so a British reader hears "en-GB" rather than the
+ * engine's default English), otherwise the page's language.
+ */
+const speechLocale = (): string => {
+  const pageLocale = document.documentElement.lang || "en";
+  const pageLanguage = baseLanguage(pageLocale);
+  const preferred = (navigator.languages ?? [navigator.language]).find(
+    (locale) => baseLanguage(locale) === pageLanguage,
+  );
+  return preferred ?? pageLocale;
+};
+
+/**
+ * Choose a voice for the locale: one for the exact region if the device has
+ * it, otherwise any voice in the same language. Engines don't all honour
+ * `utterance.lang` alone (iOS keeps its default voice), so it is set
+ * explicitly. Returns nothing while the voices are still loading, leaving the
+ * choice to the engine.
+ */
+const pickVoice = (voices: SpeechSynthesisVoice[], locale: string) => {
+  const tag = normaliseTag(locale);
+  const language = baseLanguage(locale);
+  const exact = voices.filter((voice) => normaliseTag(voice.lang) === tag);
+  const related = voices.filter(
+    (voice) => baseLanguage(voice.lang) === language,
+  );
+  return bestVoice(exact) ?? bestVoice(related);
+};
+
+/** Prefer the device's default voice, then one that works offline. */
+const bestVoice = (voices: SpeechSynthesisVoice[]) =>
+  voices.find((voice) => voice.default) ??
+  voices.find((voice) => voice.localService) ??
+  voices[0];
+
+// Android reports some voices as "en_GB" rather than "en-GB".
+const normaliseTag = (tag: string) => tag.replace(/_/g, "-").toLowerCase();
+
+const baseLanguage = (tag: string) => normaliseTag(tag).split("-")[0];
+
+const splitSentences = (text: string, locale: string): string[] => {
   if (typeof Intl.Segmenter !== "function") {
     return [text];
   }
-  const segmenter = new Intl.Segmenter(document.documentElement.lang || "en", {
-    granularity: "sentence",
-  });
+  const segmenter = new Intl.Segmenter(locale, { granularity: "sentence" });
   return [...segmenter.segment(text)]
     .map(({ segment }) => segment.trim())
     .filter(Boolean);
