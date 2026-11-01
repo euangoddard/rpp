@@ -18,20 +18,20 @@
     "cf-typegen": "wrangler types"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
-    "@astrojs/preact": "^6.0.5",
+    "@astrojs/check": "^0.9.12",
+    "@astrojs/preact": "^6.1.1",
     "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/vite": "^4.3.3",
     "@types/dom-screen-wake-lock": "^1.0.3",
-    "@types/node": "^26.5.1",
-    "astro": "^7.3.2",
+    "@types/node": "^26.6.6",
+    "astro": "^7.4.4",
     "fast-glob": "^3.3.3",
     "front-matter": "^4.0.2",
-    "prettier": "^3.9.6",
-    "prettier-plugin-astro": "^1.0.0",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.2",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
-    "wrangler": "^4.131.2"
+    "wrangler": "^4.156.0"
   },
   "dependencies": {
     "@fontsource-variable/fraunces": "^5.3.0",
