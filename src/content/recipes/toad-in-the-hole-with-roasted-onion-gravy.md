@@ -33,18 +33,27 @@ tags:
 ## Method
 
 1. Pre-heat oven to 220ºC.
-1. Make the batter.
+
+### Make the batter
+
 1. Sieve the flour into a large bowl, holding the sieve high in the air to give it a good airing.
 1. Make a well in the centre of the flour, break an egg into it and add salt and pepper.
 1. Mix the water and milk together and add slowly to the flour mixture, whisking all the time.
 1. Whisk until smooth.
-1. Roast the onions.
+
+### Roast the onions
+
 1. Place the onions in a bowl, add 1 tsp oil and the sugar. Toss to coat.
 1. Spread on a baking tray and place on the top shelf in the oven.
 1. Cook until blackened around the edges, about 15 minutes.
+
+### Cook the sausages
+
 1. Arrange the sausages in the roasting tin, place on a lower shelf in the oven and cook for 10 minutes (at same time as onions).
 1. Take the sausages out. If they have not released much oil, add a tsp of oil. Quickly pour the batter over the sausages. Return to the oven, this time on the highest shelf, and cook for 30 minutes.
-1. For the gravy:
+
+### For the gravy
+
 1. Make the stock and pour into a saucepan.
 1. Add the roasted onions.
 1. Add a tsp of oil.
